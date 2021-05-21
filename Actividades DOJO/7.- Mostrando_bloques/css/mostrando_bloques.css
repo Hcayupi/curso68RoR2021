@@ -1,0 +1,45 @@
+* {
+    margin: 0px auto;
+}
+
+#contenedor {
+    width: 853px;
+    padding: 16px;
+    background-color: #d5d1ae;
+}
+
+#encabezado {
+    text-align: center;
+    font-size: 18px;
+}
+
+#encabezado h1 {
+    display: inline-block;
+}
+
+#encabezado img {
+    margin-top: 28px;
+    width: 160px;
+    height: 80px;
+    background-color: #ffff;
+}
+
+#bloques img {
+    width: 120px;
+    height: 120px;
+    border: 4px black solid;
+    margin: 10px 0px 0px 11px;
+    padding: 13px;
+}
+
+#bloques {
+    height: 700px;
+}
+
+.rosado {
+    background-color: #f36970;
+}
+
+.marcoAzul {
+    background-color: #82b4ee;
+}
