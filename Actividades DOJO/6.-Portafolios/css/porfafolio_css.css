@@ -1,5 +1,4 @@
 * {
-    /*border: 1px dotted red;*/
     margin: 0px auto;
 }
 
@@ -19,10 +18,12 @@
     width: 50%;
     margin-left: 20px;
     padding: 10px 0px 10px 0px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
 }
 
 #cabecera h2 {
     display: inline-block;
+    font-family: Helvetica, sans-serif;
 }
 
 
@@ -37,7 +38,8 @@
 }
 
 #contenido {
-    background-image: linear-gradient(to bottom right, #170a1e, #ab89cc, #170a1e);
+    background-image: linear-gradient(to bottom right, #27161b, #6f5964, #27161b);
+    font-family: Helvetica, sans-serif;
 }
 
 
@@ -54,6 +56,7 @@
 
 #about p {
     margin: 10px;
+    font-size: 15px;
 }
 
 #about a {
@@ -62,7 +65,7 @@
 
 #about h2 {
     font-size: 17px;
-    background-image: linear-gradient(#ceeef7, #81b5e0, #ceeef7);
+    background-image: linear-gradient(#aeadb3, #757480, #aeadb3);
     width: 438px;
     height: 31px;
     padding: 10px 0px 0px 10px;
@@ -80,20 +83,35 @@
 .cuadroAngosto {
     display: inline-block;
     width: 278px;
-    height: 670px;
-    margin: 0px 0px 20px 20px;
+    height: 610px;
+    margin: 0px 0px 20px 22px;
     vertical-align: top;
     background: white;
+    background-image: linear-gradient(to bottom right, #ffffff, #dbceda);
 }
 
 .cuadroAngosto h2 {
     font-size: 17px;
-    background-image: linear-gradient(#ceeef7, #81b5e0, #ceeef7);
-    width: 266px;
+    background-image: linear-gradient(#aeadb3, #757480, #aeadb3);
+    width: 268px;
     height: 31px;
     padding: 10px 0px 0px 10px;
     color: white;
     margin: 0px;
+    font-family: Helvetica, sans-serif;
+}
+
+.cuadroAngosto a {
+    margin: 0px auto;
+    border-radius: 8px;
+    background-color: #2f692f;
+    color: white;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 4px;
+    height: 25px;
+    box-shadow: 3px 3px 4px #928f8f
 }
 
 .propiedadImg {
@@ -106,11 +124,63 @@
     margin: 8px 10px 0px 10px;
     font-size: 15px;
     text-align: justify;
-    height: 165px;
+    height: 175px;
 }
 
 .formatoTech img {
     display: inline-block;
     width: 34px;
     margin: 17px 7px 0px 10px;
+}
+
+
+/* INICIO TAMAÑO  DE BOTONES VERDES */
+
+#mode a {
+    width: 87px;
+    text-decoration: none;
+}
+
+#contacts a {
+    width: 123px;
+    text-decoration: none;
+}
+
+#eleven a {
+    width: 87px;
+    text-decoration: none;
+}
+
+
+/* FIN DE TAMAÑO DE BOTONES VERDES*/
+
+
+/* PROPIEDADES DE PIE DE PÁGINA */
+
+#pieDepagina {
+    height: 74px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+#pieDepagina ul li {
+    display: inline-block;
+    font-style: oblique;
+}
+
+#pieDepagina ul {
+    margin-top: 10px;
+}
+
+#pieDepagina p {
+    font-size: 18px;
+}
+
+#pieDepagina a {
+    margin: 0px 6px;
+}
+
+#pieDepagina img {
+    width: 18px;
+    margin: -6px;
 }
