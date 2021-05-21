@@ -1,0 +1,116 @@
+* {
+    /*border: 1px dotted red;*/
+    margin: 0px auto;
+}
+
+
+/*    CONTENEDOR   */
+
+#contenedor {
+    width: 930px;
+    background-color: #f4f4f4;
+}
+
+
+/*    CABECERA  */
+
+#cabecera h1 {
+    display: inline-block;
+    width: 50%;
+    margin-left: 20px;
+    padding: 10px 0px 10px 0px;
+}
+
+#cabecera h2 {
+    display: inline-block;
+}
+
+
+/*    CONTENIDO  */
+
+#photoOfme {
+    height: 255px;
+    width: 410px;
+    display: inline-block;
+    margin: 20px;
+    border: white 2px solid;
+}
+
+#contenido {
+    background-image: linear-gradient(to bottom right, #170a1e, #ab89cc, #170a1e);
+}
+
+
+/*    ABOUT  */
+
+#about {
+    display: inline-block;
+    width: 448px;
+    height: 255px;
+    margin: 20px 20px 20px 0px;
+    vertical-align: top;
+    background: white;
+}
+
+#about p {
+    margin: 10px;
+}
+
+#about a {
+    margin: 10px;
+}
+
+#about h2 {
+    font-size: 17px;
+    background-image: linear-gradient(#ceeef7, #81b5e0, #ceeef7);
+    width: 438px;
+    height: 31px;
+    padding: 10px 0px 0px 10px;
+    color: white;
+    margin: 0px;
+}
+
+
+/* CLASES */
+
+.puntoAparte {
+    margin-bottom: 38px;
+}
+
+.cuadroAngosto {
+    display: inline-block;
+    width: 278px;
+    height: 670px;
+    margin: 0px 0px 20px 20px;
+    vertical-align: top;
+    background: white;
+}
+
+.cuadroAngosto h2 {
+    font-size: 17px;
+    background-image: linear-gradient(#ceeef7, #81b5e0, #ceeef7);
+    width: 266px;
+    height: 31px;
+    padding: 10px 0px 0px 10px;
+    color: white;
+    margin: 0px;
+}
+
+.propiedadImg {
+    width: 275px;
+    height: 173px;
+    margin: 0px;
+}
+
+.cuadroAngosto p {
+    margin: 8px 10px 0px 10px;
+    font-size: 15px;
+    text-align: justify;
+    height: 165px;
+}
+
+.formatoTech img {
+    display: inline-block;
+    width: 34px;
+    margin: 17px 7px 0px 10px;
+}

@@ -1,14 +1,12 @@
 #contenedor {
     width: 970px;
-    height: 970px;
     background-color: #1c345d;
     margin: 0px auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 #cabecera {
     width: 926px;
-    height: 71px;
     background-color: #98291D;
     color: #ffffff;
     padding: 2px 21px;
@@ -16,18 +14,12 @@
 
 #navegacion {
     width: 230px;
-    height: 300px;
     background-color: #2c7e69;
-    padding: 8px 0px 0px 8px;
-}
-
-#navegacion * {
-    color: #84d6d6;
+    padding: 11px 0px 0px 16px;
 }
 
 #contenido {
     width: 70%;
-    height: 68%;
     background-color: #0e1821;
     margin-left: 20px;
     color: #ffffff;
@@ -39,10 +31,12 @@
 }
 
 #pieDepagina {
-    width: 961px;
-    height: 88px;
+    width: 940px;
+    height: 70px;
     background-color: #5d6673;
+    padding: 12px 0px 0px 23px;
     margin-top: 20px;
+    color: #ffffff
 }
 
 #navegacion,
@@ -57,4 +51,25 @@
 #contenido,
 #pieDepagina {
     border-radius: 16px;
+}
+
+.conceptos {
+    color: #84d6d6;
+    text-decoration: underline;
+}
+
+#navegacion * {
+    color: #84d6d6;
+}
+
+.morado {
+    color: #9795ff;
+}
+
+.turquesa {
+    color: #84d6d6;
+}
+
+#navegacion ul {
+    margin-top: auto;
 }
