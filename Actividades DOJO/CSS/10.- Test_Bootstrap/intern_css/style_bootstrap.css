@@ -1,0 +1,12 @@
+form.form-inline.my-2.my-lg-0 {
+    width: 31em;
+}
+
+input.form-control.mr-sm-2 {
+    width: 57%;
+    display: inline-block;
+}
+
+.jumbotron {
+    margin: 2em 0em 0em 1em;
+}
