@@ -1,0 +1,89 @@
+* {
+    /* border: 1px dotted red;*/
+    margin: 0px auto;
+}
+
+table {
+    text-align: center;
+    display: inline-block;
+}
+
+th {
+    height: 56px;
+    width: 63px;
+    color: red;
+    font-size: 15px;
+}
+
+td {
+    height: 56px;
+    width: 63px;
+    border: 1px solid #525252;
+}
+
+div {
+    width: 1390px;
+    background-color: #eeeeee;
+}
+
+
+/*Span para los nombres de los elementos*/
+
+span {
+    display: block;
+    font-size: 20px;
+}
+
+
+/* Tabla izquierda */
+
+#tablaIzquierda td {
+    background-color: #689bff;
+}
+
+
+/* Tabla Central */
+
+#tablaCentral {
+    margin-left: 20px;
+}
+
+#tablaCentral td {
+    background-color: #fd9a98;
+}
+
+
+/*Alto para el espacio que hay sobre la tabla central*/
+
+#altoColspan {
+    height: 180px!important;
+}
+
+
+/* Tabla derecha */
+
+#tablaDerecha td {
+    background-color: #fecb02;
+}
+
+
+/* Tabla inferior */
+
+#tablaInferior {
+    margin-top: 28px;
+}
+
+#tablaInferior th {
+    width: 210px;
+}
+
+#tablaInferior td {
+    background-color: #30ca21;
+}
+
+
+/*Posición de los asteriscos de la tabla inferior*/
+
+.asteriscoHaciaLaDerecha {
+    width: 15px !important;
+}
