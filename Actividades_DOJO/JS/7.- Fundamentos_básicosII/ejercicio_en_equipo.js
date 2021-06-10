@@ -20,7 +20,7 @@ console.log(perspectivaNegativa([1, -3, 5]));
 los valores sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez.*/
 
 function siempreHambriento(array) {
-    console.log("--------------")
+    //console.log("--------------")
     var tengoHambre = true; //variable booleana
 
     for (let i = 0; i < array.length; i++) {
@@ -30,9 +30,8 @@ function siempreHambriento(array) {
             console.log("yummy");
         }
     }
-    if (tengoHambre) {
+    if (tengoHambre)
         console.log("tengo hambre");
-    }
 }
 
 siempreHambriento([1, 56, "comida", "pato", "zapato", true, false, "comida"]);
@@ -44,18 +43,19 @@ cambiaHaciaElCentro([1,2,3,4,5,6]) cambia el array a [6,2,4,3,5,1]. No es necesa
 function cambiaHaciaElCentro(array) {
     var auxiliar = 0;
     var iFinal = array.length - 1;
+    var mitadArray = array.length / 2;
 
-    for (let iInicial = 0; iInicial < array.length / 2; iInicial += 2) {
+    for (let iInicial = 0; iInicial < mitadArray; iInicial += 2) {
         auxiliar = array[iInicial];
         array[iInicial] = array[iFinal];
         array[iFinal] = auxiliar;
-        iFinal -= 2
+        iFinal -= 2;
     }
 
     return array;
 }
 
-console.log(" salida final: " + cambiaHaciaElCentro([1, 2, 3, 4, 5, 6]));
+console.log(" salida final: " + cambiaHaciaElCentro([1, 2, 3, 4, 5, 6, 45, 23, 58, 9, 54, 25, 852, 458, 42, 12, 36, 98]));
 console.log(" salida final: " + cambiaHaciaElCentro([true, 42, "Ada", 2, "pizza"]));
 
 /*14.- Escala el Array - Dado un array arr y un número num, multiplica todos los valores en el array arr por el número num, 
@@ -68,6 +68,4 @@ function escalaArray(arr, num) {
     }
     return arr;
 }
-
-
 console.log(escalaArray([0, 9, 10, 50], 7));
