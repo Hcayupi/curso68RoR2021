@@ -219,7 +219,7 @@ function cambiaHaciaElCentro(array) {
     }
     console.log("R: " + array);
 }
-cambiaHaciaElCentro([1, 2, 3, 4, 5, 6, 7, 8]);
+cambiaHaciaElCentro([1, 2, 3, 4, 5, 6]);
 cambiaHaciaElCentro([true, 42, "Ada", 2, "pizza"]);
 
 /*15.- Escala el Array - Dado un array arr y un número num, multiplica todos los valores en el array arr por el número num, 

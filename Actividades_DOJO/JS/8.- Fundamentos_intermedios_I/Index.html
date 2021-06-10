@@ -57,6 +57,14 @@
             [0, 0, 0, 0, 1, 0, 0, 3, 3, 3],
         ];
 
+        function obtenerColorRandomDecimal() {
+            let rojo = Math.floor(Math.random() * 256);
+            let verde = Math.floor(Math.random() * 256);
+            let azul = Math.floor(Math.random() * 256);
+
+            return "rgb(" + rojo + "," + verde + "," + azul + ")";
+        }
+
         var mapping = {
             0: 'white',
             1: 'red',
@@ -64,6 +72,7 @@
             3: 'blue',
             4: 'green'
         }
+        var codigoColor = 5;
 
         function drawWorld() {
             var output = '';
@@ -71,7 +80,10 @@
                 //console.log(world.length);
                 output += '<div class="row">';
                 for (var j = 0; j < world[i].length; j++) {
-                    output += "<div class='" + mapping[world[i][j]] + "'></div>";
+                    if (world[i][j] >= 5) {
+                        output += "<div style='background:" + mapping[world[i][j]] + ";'></div>";
+                    } else
+                        output += "<div class='" + mapping[world[i][j]] + "'></div>";
                 }
                 output += '</div>';
             }
@@ -87,10 +99,15 @@
 
             // console.log('X, Y', x, y);
             // console.log('Original Color', world[y][x]);
+            mapping[codigoColor] = obtenerColorRandomDecimal();
 
             console.log('Replace color', world[y][x], ' with color 4 starting from x:', x, 'y:', y);
-            fill(x, y, world[y][x], 4);
+            fill(x, y, world[y][x], codigoColor);
+            codigoColor += 1;
         }
+
+
+
 
         function fill(x, y, original_color, color) {
             //Autor: Dojo
@@ -101,12 +118,11 @@
             if (world[y][x] != original_color) {
                 return false;
             }
-
             world[y][x] = color;
-            fill(x, y - 1, original_color, 4);
-            fill(x, y + 1, original_color, 4); //Creo que vuelve a pintar tantos cuadrados como retrocedió antes de empezar a pintar los nuevos cuadrados
-            fill(x - 1, y, original_color, 4);
-            fill(x + 1, y, original_color, 4);
+            fill(x, y - 1, original_color, color);
+            fill(x, y + 1, original_color, color); //Creo que vuelve a pintar tantos cuadrados como retrocedió antes de empezar a pintar los nuevos cuadrados
+            fill(x - 1, y, original_color, color);
+            fill(x + 1, y, original_color, color);
 
             drawWorld();
         }

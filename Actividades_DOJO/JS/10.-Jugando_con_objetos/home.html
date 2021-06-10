@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        for (let i = 0; i < 10; i++) {
+            document.body.innerHTML += "<p>Parrafo: " + i + "</p>";
+        }
+
+        function obtenerColorRandomDecimal() {
+            let rojo = Math.floor(Math.random() * 256);
+            let verde = Math.floor(Math.random() * 256);
+            let azul = Math.floor(Math.random() * 256);
+
+            return "rgb(" + rojo + "," + verde + "," + azul + ")";
+        }
+
+        var paragraphs = document.getElementsByTagName('p');
+        for (var i = 0; i < paragraphs.length; i++) {
+
+            paragraphs[i].addEventListener('click', function() {
+                this.style.background = obtenerColorRandomDecimal();
+                this.style.color = 'white';
+            });
+        }
+    </script>
+</body>
+
+</html>
