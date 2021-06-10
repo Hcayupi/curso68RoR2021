@@ -1,6 +1,6 @@
 /*1.- Dados un array y un valor Y, cuenta e imprime (print) el número de valores del array que sean mayores que Y.  */
 
-function arrayMayorQueY(array, y) {
+function mayorQueY(array, y) {
     var contador = 0;
 
     for (var i = 0; i < array.length; i++) {
@@ -12,7 +12,7 @@ function arrayMayorQueY(array, y) {
     console.log(contador + " números son mayores que " + y);
 }
 
-arrayMayorQueY([2, 3, 58, -5, 878, 52, 1, 2, 3, 8, 5], 12);
+mayorQueY([2, 3, 58, -5, 878, 52, 1, 2, 3, 8, 5], 12);
 
 
 
@@ -20,7 +20,7 @@ arrayMayorQueY([2, 3, 58, -5, 878, 52, 1, 2, 3, 8, 5], 12);
 
 function mayorMenorProm(array) {
     var mayor = array[0];
-    var menor = 0;
+    var menor = array[0];
     var suma = 0;
     for (var i = 0; i < array.length; i++) {
         if (array[i] > mayor) {
@@ -42,12 +42,13 @@ mayorMenorProm([2, 3, 58, -5, 878, 52, 1, 2, -10, 0, 1000]);
 reemplacen por el texto (string) ‘Dojo’. Por ejemplo, reemplazarNegativos([1,2,-3,-5,5]) debiera devolver [1,2, “Dojo”, “Dojo”, 5]. */
 
 function reemplazarNegativos(array) {
+    var nuevoArray = array;
     for (var i = 0; i < array.length; i++) {
         if (array[i] < 0) {
-            array[i] = "Dojo";
+            nuevoArray[i] = "Dojo";
         }
     }
-    console.log("Nuevo array: [" + array + "]");
+    console.log("Nuevo array: [" + nuevoArray + "]");
 }
 reemplazarNegativos([1, 2, -3, -5, 5]);
 
