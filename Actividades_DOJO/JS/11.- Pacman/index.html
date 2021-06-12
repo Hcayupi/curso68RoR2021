@@ -8,8 +8,12 @@
     <title> --- PACMAN ---</title>
 
     <style type="text/css">
+        #world {
+            padding-left: 7px;
+        }
+        
         div.row {
-            margin: 0px;
+            margin: -4px;
             padding: 0px;
         }
         
@@ -30,17 +34,24 @@
         }
         
         div.coin {
-            background: url('./imagenes/coin_pacman.gif');
+            background: url('./imagenes/coin_pacman2.gif');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+        }
+        
+        div.cereza {
+            background: url('./imagenes/cereza.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 15px;
         }
         
         div#pacman {
             background: url('./imagenes/pacman.gif');
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover;
+            background-size: 15px;
             width: 20px;
             height: 20px;
             position: absolute;
@@ -49,27 +60,71 @@
         div.empty {
             background-color: black;
         }
+        
+        div#score {
+            border: 1px solid white;
+            width: 30px;
+            height: 20px;
+            color: white;
+            padding: 7px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        h3 {
+            color: white;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 5px;
+            margin-right: 5px;
+            line-height: 0px;
+        }
+        
+        div#container {
+            display: inline-block;
+        }
     </style>
 </head>
 
 <body>
     <div id='container'>
         <div id="world"></div>
-        <div id='pacman' style='top: 23px; left:23px;'></div>
+        <div id='pacman'></div>
     </div>
+    <h3>Puntaje</h3>
+    <div id='score'>0</div>
 
     <script>
         var world = [
-            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-            [2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2],
-            [2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2],
-            [2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2],
-            [2, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2],
-            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            [2, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 2, 2, 2, 1, 1, 1, 3, 2, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 2, 1, 0, 1, 1, 2, 2, 0, 0, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 0, 2, 1, 1, 1, 1, 1, 2, 0, 2, 2, 0, 1, 1, 1, 1, 1, 1, 3, 2],
+            [2, 1, 1, 1, 1, 1, 0, 1, 1, 2, 0, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2],
+            [2, 2, 2, 2, 0, 1, 1, 1, 1, 2, 0, 2, 0, 1, 1, 3, 1, 2, 1, 3, 1, 2],
+            [2, 1, 1, 2, 1, 1, 0, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 2, 2, 2],
+            [2, 3, 1, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 2, 1, 2],
+            [2, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 2],
+            [2, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 2],
+            [2, 2, 2, 1, 1, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 2, 2, 2, 2, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 3, 1, 1, 1, 1, 3, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 2],
+            [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+            [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
         ];
+
+        var score = 0;
+
+        var pacman = {
+            x: 0,
+            y: 1
+        };
 
         function displayWorld() {
             var output = '';
@@ -83,6 +138,8 @@
                         output += "<div class='coin'></div>";
                     else if (world[i][j] == 0)
                         output += "<div class='empty'></div>";
+                    else if (world[i][j] == 3)
+                        output += "<div class='cereza'></div>";
                 }
                 output += "\n</div>";
             }
@@ -90,6 +147,51 @@
             document.getElementById('world').innerHTML = output;
         }
         displayWorld();
+
+        function displayPacman() {
+            document.getElementById('pacman').style.top = pacman.y * 14 + "px";
+            document.getElementById('pacman').style.left = pacman.x * 20 + "px";
+        }
+
+        function displayScore() {
+            document.getElementById('score').innerHTML = score;
+        }
+        displayPacman();
+        document.onkeydown = function(e) {
+            if (e.keyCode == 37) { //izquierda
+                console.log(e.keyCode + " izquierda");
+                document.getElementById('pacman').style.transform = "rotate(-180deg)";
+                pacman.x--;
+            } else if (e.keyCode == 39) { //derecha
+                console.log(e.keyCode + " derecha");
+                document.getElementById('pacman').style.transform = "rotate(0deg)";
+                pacman.x++;
+            } else if (e.keyCode == 38) { //arriba
+                console.log(e.keyCode + " arriba");
+                document.getElementById('pacman').style.transform = "rotate(-90deg)";
+                pacman.y--;
+            } else if (e.keyCode == 40) { //abajo
+                console.log(e.keyCode + " abajo");
+                //Gira el pacman hacia abajo
+                document.getElementById('pacman').style.transform = "rotate(90deg)";
+                pacman.y++;
+            }
+            console.log("Coordenadas:  Y= " + pacman.y + "      X= " + pacman.x);
+            console.log("Tipo de elemento en el mapa: " + world[pacman.y][pacman.x]);
+            if (world[pacman.y][pacman.x] == 1) {
+                actualizarDisplay(10);
+            } else if (world[pacman.y][pacman.x] == 3) {
+                actualizarDisplay(50);
+            }
+            displayPacman();
+        }
+
+        function actualizarDisplay(puntaje) {
+            score += puntaje;
+            world[pacman.y][pacman.x] = 0;
+            displayScore();
+            displayWorld();
+        }
     </script>
 </body>
 
