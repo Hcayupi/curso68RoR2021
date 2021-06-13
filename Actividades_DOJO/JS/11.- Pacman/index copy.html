@@ -8,46 +8,43 @@
     <title> --- PACMAN ---</title>
 
     <style type="text/css">
-        #world {
+        table,
+        td {
+            border-collapse: collapse;
+        }
+        /*#world {
             padding-left: 7px;
-        }
-        
-        div.row {
-            margin: -3px;
-            padding: 0px;
-        }
+        }*/
         
         body {
             background-color: black;
             margin: 0px;
         }
         
-        div.row div {
+        .row td {
             width: 20px;
             height: 20px;
-            display: inline-block;
-            /* border: 1px solid black;*/
         }
         
-        div.brick {
+        .brick {
             background-color: blue;
         }
         
-        div.coin {
+        .coin {
             background: url('./imagenes/coin_pacman2.gif');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
         }
         
-        div.cereza {
+        .cereza {
             background: url('./imagenes/cereza.png');
             background-repeat: no-repeat;
             background-position: center;
             background-size: 15px;
         }
         
-        div#pacman {
+        #pacman {
             background: url('./imagenes/pacman.gif');
             background-repeat: no-repeat;
             background-position: center;
@@ -57,11 +54,11 @@
             position: absolute;
         }
         
-        div.empty {
+        .empty {
             background-color: black;
         }
         
-        div#score {
+        #score {
             border: 1px solid white;
             width: 30px;
             height: 20px;
@@ -81,7 +78,7 @@
             line-height: 0px;
         }
         
-        div#container {
+        #container {
             display: inline-block;
         }
     </style>
@@ -89,7 +86,7 @@
 
 <body>
     <div id='container'>
-        <div id="world"></div>
+        <table id="world"></table>
         <div id='pacman'></div>
     </div>
     <h3>Puntaje</h3>
@@ -120,28 +117,30 @@
         ];
 
         var score = 0;
+        var topBottom = 23;
+        var leftRigth = 23;
 
         var pacman = {
-            x: 0,
-            y: 0
+            x: 1,
+            y: 1
         };
 
         function displayWorld() {
             var output = '';
 
             for (var i = 0; i < world.length; i++) {
-                output += "<div class='row'>";
+                output += "<tr class='row'>";
                 for (var j = 0; j < world[i].length; j++) {
                     if (world[i][j] == 2)
-                        output += "<div class='brick'></div>";
+                        output += "<td class='brick'></td>";
                     else if (world[i][j] == 1)
-                        output += "<div class='coin'></div>";
+                        output += "<td class='coin'></td>";
                     else if (world[i][j] == 0)
-                        output += "<div class='empty'></div>";
+                        output += "<td class='empty'></td>";
                     else if (world[i][j] == 3)
-                        output += "<div class='cereza'></div>";
+                        output += "<td class='cereza'></td>";
                 }
-                output += "</div>";
+                output += "</tr>";
             }
             //console.log(output);
             document.getElementById('world').innerHTML = output;
@@ -149,8 +148,13 @@
         displayWorld();
 
         function displayPacman() {
-            document.getElementById('pacman').style.top = pacman.y * 20 + "px";
-            document.getElementById('pacman').style.left = pacman.x * 20 + "px";
+            /* if (pacman.y == 0) {
+                 document.getElementById('pacman').style.top = "23px";
+                 // world[pacman.y][pacman.x] = 1;
+             } else*/
+
+            document.getElementById('pacman').style.top = topBottom + "px";
+            document.getElementById('pacman').style.left = leftRigth + "px";
         }
 
         function displayScore() {
@@ -163,18 +167,22 @@
 
             //Verificamos la tecla presionada y si el siguiente movimiento tocará la pared azul
             if (e.keyCode == 37 && world[pacman.y][pacman.x - 1] != 2) { //izquierda
+                leftRigth -= 21.95;
                 //ScaleX voltea horizontalmente la imagen como un efecto espejo
                 rotarPacman("scaleX(-1)");
                 pacman.x--; //Si se cumplen las condiciones se permite el desplazamiento
             } else if (e.keyCode == 39 && world[pacman.y][pacman.x + 1] != 2) { //derecha
+                leftRigth += 21.95;
                 //Mantiene la imagen en la posición original
                 rotarPacman("rotate(0deg)");
                 pacman.x++;
             } else if (e.keyCode == 38 && world[pacman.y - 1][pacman.x] != 2) { //arriba
+                topBottom -= 21.95;
                 //Rota la imagen 90 grados (degrees) hacia arriba
                 rotarPacman("rotate(-90deg)");
                 pacman.y--;
             } else if (e.keyCode == 40 && world[pacman.y + 1][pacman.x] != 2) { //abajo
+                topBottom += 21.95;
                 rotarPacman("rotate(90deg)");
                 pacman.y++;
             }
@@ -182,9 +190,9 @@
             console.log("Tipo de elemento en el mapa: " + world[pacman.y][pacman.x]);
 
             if (world[pacman.y][pacman.x] == 1) {
-                actualizarDisplay(10);
+                actualizarDisplays(10);
             } else if (world[pacman.y][pacman.x] == 3) {
-                actualizarDisplay(50);
+                actualizarDisplays(50);
             }
             displayPacman();
         }
