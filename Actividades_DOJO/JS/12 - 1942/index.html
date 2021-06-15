@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <title>1942 Game</title>
+
+    <style type="text/css">
+        body {
+            background-color: black;
+        }
+        
+        #container {
+            background: url('background.jpeg');
+            width: 588px;
+            height: 550px;
+            background-size: 588px;
+        }
+        
+        #hero {
+            background: url('1942.gif');
+            background-position: -85px -180px;
+            width: 28px;
+            height: 28px;
+            position: absolute;
+        }
+        
+        .enemy1 {
+            background: url('1942.gif');
+            background-position: -30px -10px;
+            width: 28px;
+            height: 28px;
+            position: absolute;
+        }
+        
+        .bullet {
+            background: url('1942.gif');
+            background-position: -185px -400px;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+        }
+        
+        #score {
+            position: absolute;
+            border: 10px solid red;
+            top: 20px;
+            left: 626px;
+            background-color: white;
+            padding: 10px;
+            font-size: 30px;
+            font-family: Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='container'>
+        <div id='hero'></div>
+        <div id='enemies'></div>
+        <div id='bullets'></div>
+    </div>
+
+    <div id='score'>100</div>
+
+
+    <script>
+        var hero = {
+            x: 300,
+            y: 500
+        }
+        var enemies = [{
+                x: 50,
+                y: 50
+            }
+            /*, {
+                        x: 150,
+                        y: 50
+                    }, {
+                        x: 250,
+                        y: 250
+                    }, {
+                        x: 350,
+                        y: 150
+                    }, {
+                        x: 450,
+                        y: 80
+                    }, {
+                        x: 510,
+                        y: 40
+                    }, {
+                        x: 570,
+                        y: 50
+                    }*/
+        ];
+
+        var balas = [];
+
+        function displayHero() {
+            document.getElementById('hero').style['top'] = hero.y + "px";
+            document.getElementById('hero').style['left'] = hero.x + "px";
+        }
+
+        function displayEnemies() {
+            var output = '';
+            for (let i = 0; i < enemies.length; i++) {
+                output += "<div class='enemy1' style='top:" + enemies[i].y + "px; left:" + enemies[i].x + "px;'></div>";
+            }
+
+            document.getElementById('enemies').innerHTML = output;
+        }
+
+        function moveEnemies() {
+            for (var i = 0; i < enemies.length; i++) {
+                enemies[i].y += 5;
+
+                if (enemies[i].y > 545) {
+                    enemies[i].y = 0;
+                    enemies[i].x = Math.random() * 500;
+                }
+            }
+        }
+
+        function detectorDeColision() {
+            var distanciaIzDer = 0;
+            var distanciaArrAba = 0;
+            for (let i = 0; i < enemies.length; i++) {
+                for (let j = 0; j < balas.length; j++) {
+                    /*  distanciaIzDer = Math.abs(enemies[i].x - balas[j].x);
+                      distanciaArrAba = Math.abs(enemies[i].y - balas[j].y);*/
+                    //console.log("distancia: " + distanciaIzDer + " - " + distanciaArrAba);
+                    /*if ((distanciaIzDer > 5 && distanciaIzDer < 24) && distanciaArrAba < 3) {
+                        console.log("Alerta de colisio: " + distanciaIzDer + " - " + distanciaArrAba);
+                    }*/
+
+                    console.log("Alerta de colisio: LEFT enemigo -> " + (enemies[i].x - 7) + " balas-> " + balas[j].x);
+                    console.log("Alerta de colisio: TOP enemigo -> " + enemies[i].y + " balas-> " + balas[j].y);
+
+                }
+            }
+        }
+
+        function moveBalas() {
+            for (var i = 0; i < balas.length; i++) {
+                balas[i].y -= 5;
+
+                if (balas[i].y < 0) {
+                    balas[i] = balas[balas.length - 1];
+                    balas.pop();
+                    //console.log(balas);
+                }
+            }
+        }
+
+        function displayBalas() {
+            var output = "";
+            for (let i = 0; i < balas.length; i++) {
+                output += "<div class='bullet' style='top:" + balas[i].y + "px; left:" + balas[i].x + "px;'></div>";
+            }
+            document.getElementById('bullets').innerHTML = output;
+        }
+
+        function gameLoopEnemigos() {
+            moveEnemies();
+            displayEnemies();
+        }
+
+        function gameLoopBalas() {
+            moveBalas();
+            displayBalas();
+            detectorDeColision();
+        }
+
+        setInterval(gameLoopEnemigos, 1000);
+
+        setInterval(gameLoopBalas, 10);
+
+        document.onkeydown = function(e) {
+            if (e.keyCode == 37 && (hero.x - 9) > 10) { //izquierda
+                hero.x -= 10;
+            } else if (e.keyCode == 39 && (hero.x + 9) < 570) { //derecha
+                hero.x += 10;
+            } else if (e.keyCode == 38 && (hero.y - 9) > 10) { //arriba
+                hero.y -= 10;
+
+            } else if (e.keyCode == 40 && (hero.y + 9) < 530) { //abajo
+                hero.y += 10;
+            } else if (e.keyCode == 32) { //Barra espaciadora
+                balas.push({
+                    x: hero.x + 5,
+                    y: hero.y - 13
+                });
+            }
+            displayHero();
+        }
+        displayHero();
+        displayEnemies();
+    </script>
+
+</body>
+
+</html>

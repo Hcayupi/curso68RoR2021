@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('document').ready(function() {
+            $('button').click(function() {
+                alert("Click en this");
+            });
+
+            /*  $('#imagen1').click(function() {
+                  $('#imagen1').hide();
+              });
+              $('#imagen2').click(function() {
+                  $('#imagen2').hide();
+              });
+              $('#imagen3').click(function() {
+                  $('#imagen3').hide();
+              });
+              $('#imagen4').click(function() {
+                  $('#imagen4').hide();
+              });
+              $('#imagen5').click(function() {
+                  $('#imagen5').hide();
+              });
+              $('#imagen6').click(function() {
+                  $('#imagen6').hide();
+              });
+              $('#imagen7').click(function() {
+                  $('#imagen7').hide();
+              });
+              $('#imagen8').click(function() {
+                  $('#imagen8').hide();
+              });*/
+
+            $('img').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <style>
+        img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="./imagen/dinosaurios.jpeg" id="imagen1" alt="Dinosaurio">
+    <img src="./imagen/dinosaurios.jpeg" id="imagen2" alt="Dinosaurio">
+    <img src="./imagen/dinosaurios.jpeg" id="imagen3" alt="Dinosaurio">
+    <img src="./imagen/dinosaurios.jpeg" id="imagen4" alt="Dinosaurio">
+    <img src="./imagen/dinosaurios.jpeg" id="imagen5" alt="Dinosaurio">
+    <img src="./imagen/dinosaurios.jpeg" id="imagen6" alt="Dinosaurio">
+    <img src="./imagen/dinosaurios.jpeg" id="imagen7" alt="Dinosaurio">
+    <img src="./imagen/dinosaurios.jpeg" id="imagen8" alt="Dinosaurio">
+    <button>this</button>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JQuery::</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //etiqueta
+            $('button').click(function() {
+                console.log("Estoy en JQuery desde Button");
+                alert("Estoy en JQuery desde Button");
+            });
+            //funcionalidad por etiqueta
+            //Se ejecuta para cualquier elemento
+            $('input').click(function() {
+                console.log("Estoy en JQuery desde Button");
+                alert("Estoy en JQuery desde Button");
+            });
+            //funcionalidad por clase(.)
+            //Se ejecuta para cualquier elemento que posea la clase
+            $('.input2').click(function() {
+                console.log("Estoy en JQuery desde input por clase");
+                alert("Estoy en JQuery desde Input por clase");
+            });
+            //funcionalidad por id(#)
+            //Solo para el elemento con el id
+            $('#input3').click(function() {
+                console.log("Estoy en JQuery desde input por clase");
+                alert("Estoy en JQuery desde Input por clase");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <button> jQuery</button>
+        <input type="button" value="boton 1">
+        <input type="button" value="boton 2" class="input2">
+        <input type="button" value="boton 3" id="input3">
+        <input type="button" value="boton 4" class="input4">
+    </div>
+</body>
+
+</html>
