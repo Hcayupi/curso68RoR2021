@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery_funciones.js"></script>
+    <style>
+        div {
+            display: inline-block;
+            vertical-align: top;
+            height: 135px;
+        }
+        
+        button {
+            display: block;
+            top: -33px;
+            margin-right: 80px;
+            margin-bottom: 2px;
+            width: 150px;
+            height: 33px;
+        }
+        
+        h1 {
+            margin: 0px;
+        }
+        
+        .red {
+            color: red;
+        }
+        
+        .textoBefore {
+            display: block;
+        }
+        
+        .textoAfter {
+            display: block;
+        }
+        
+        img {
+            width: 100px;
+            height: auto;
+        }
+        
+        p {
+            display: inline-block;
+        }
+        
+        #idosoDown {
+            display: none;
+        }
+        
+        #iddinosaurio {
+            display: none;
+        }
+        
+        #idrobot {
+            display: none;
+        }
+        
+        #idDivScroll {
+            display: block;
+            height: 163px;
+            width: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            background: #f1f1f1;
+        }
+        
+        #idDivBefore {
+            height: 250px;
+        }
+        
+        #idDivAfter {
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CLICK -->
+    <div>
+        <button id="idClearClick">Reestablecer</button>
+    </div>
+    <div>
+        <h1>Click</h1>
+        <p id="parrafo1">
+            Haz click sobre mi
+        </p>
+    </div>
+    <!-- FIN CLICK -->
+    <hr>
+    <!-- HIDE -->
+    <div>
+        <button id="idhide">Hide</button>
+        <button id="idreestablecerHide">Reestablecer</button>
+    </div>
+    <div>
+        <h1>Hide</h1>
+        <p id="parrafo2">
+            Click sobre el botón Hide para ocultar párrafo.
+        </p>
+    </div>
+    <!-- FIN HIDE -->
+    <hr>
+    <!-- SHOW -->
+    <div>
+        <button id="idshow">Show</button>
+        <button id="idHide">Reestablecer</button>
+    </div>
+    <div>
+        <h1>Show</h1>
+        <p id="parrafo3">
+            Haz click sobre el botón Show para mostrar la imagen.
+        </p>
+    </div>
+    <img id="iddinosaurio" src="./imagen/dinosaurios.jpeg" alt="dinosaurio">
+    <!-- FIN SHOW -->
+    <hr>
+    <!-- TOGGLE -->
+    <div>
+        <button id="idtoggle">Toggle</button>
+    </div>
+    <div>
+        <h1>Toggle</h1>
+        <p id="parrafo4">
+            Haz click sobre el botón Toggle para mostrar y también para ocultar la imagen.
+        </p>
+    </div>
+    <img id="idave" src="./imagen/ave.png" alt="ave">
+    <!-- FIN TOGGLE -->
+    <hr>
+    <!-- SLIDEDOWN -->
+    <div>
+        <button id="idslidedown">SlideDown</button>
+        <button id="idreestablecerSlidedown">Reestablecer</button>
+    </div>
+    <div>
+        <h1>SlideDown</h1>
+        <p id="parrafo5">
+            Haz click sobre el botón SlideDown para mostrar un oso.
+        </p>
+    </div>
+    <img id="idosoDown" src="./imagen/oso.png" alt="oso">
+    <!-- FIN SLIDEDOWN -->
+    <hr>
+    <!-- SLIDEUP -->
+    <div>
+        <button id="idslideup">SlideUp</button>
+        <button id="idreestablecerSlideup">Reestablecer</button>
+    </div>
+    <div>
+        <h1>SlideUp</h1>
+        <p id="parrafo6">
+            Haz click sobre el botón SlideUp para ocultar la imagen
+        </p>
+    </div>
+    <img id="idosoUp" src="./imagen/oso.png" alt="oso">
+    <!-- FIN SLIDEUP -->
+    <hr>
+    <!-- SLIDETOGGLE -->
+    <div>
+        <button id="idslidetoggle">Slidetoggle</button>
+    </div>
+    <div>
+        <h1>Slidetoggle</h1>
+        <p id="parrafo7">
+            Haz click sobre el botón slidetoggle para ocultar y también mostrar el párrafo.
+        </p>
+    </div>
+    <!-- FIN SLIDETOGGLE -->
+    <hr>
+    <!-- FADEIN-->
+    <div>
+        <button id="idfadein">FadeIn</button>
+        <button id="idreestablecerFadeIn">Reestablecer</button>
+    </div>
+    <div>
+        <h1>FadeIn</h1>
+        <p id="parrafo8">
+            Haz click sobre el botón FadeIn para que aparezca la imagen
+        </p>
+    </div>
+    <img id="idrobot" src="./imagen/robot.png" alt="robot">
+    <!-- FIN FADE IN-->
+    <hr>
+    <!-- FADEOUT-->
+    <div>
+        <button id="idfadeout">FadeOut</button>
+        <button id="idreestablecerfadeout">Reestablecer</button>
+    </div>
+    <div>
+        <h1>FadeOut</h1>
+        <p id="parrafo9">
+            Haz click sobre el botón FadeOut para que BB8 desaparezca
+        </p>
+    </div>
+    <img id="idbb8" src="./imagen/bb8.png" alt="BB8">
+    <!-- FADEOUT-->
+    <hr>
+    <!-- ADD CLASS-->
+    <div>
+        <button id="idaddClass">Add class</button>
+        <button id="idremoveClass">Remove Class</button>
+
+    </div>
+    <div>
+        <h1>AddClass</h1>
+        <p id="parrafo10">
+            Haz click sobre el botón AddClass para cambiar de color el párrafo.
+        </p>
+    </div>
+    <!-- ADD CLASS-->
+    <hr>
+    <!-- BEFORE -->
+    <div>
+        <button id="idbefore">Before</button>
+        <button id="idreestablecerbefore">Reestablecer</button>
+    </div>
+    <div id=idDivBefore>
+        <h1>Before</h1>
+        <p>
+            Haz click sobre el botón Before para agregar un nuevo párrafo arriba de - Párrafo: 1.
+        </p>
+        <div id="idDivScroll">
+            <p id="parrafo11">- Párrafo: 1</p>
+        </div>
+    </div>
+    <!-- FIN  BEFORE -->
+    <hr>
+    <!-- AFTER -->
+    <div>
+        <button id="idafter">After</button>
+        <button id="idreestablecerafter">Reestablecer</button>
+    </div>
+    <div id=idDivAfter>
+        <h1>After</h1>
+        <p>
+            Haz click sobre el botón Before para agregar un nuevo párrafo abajo de - Párrafo: 1.
+        </p>
+        <div id="idDivScroll">
+            <p id="parrafo12">- Párrafo: 1</p>
+        </div>
+    </div>
+    <!-- FIN  AFTER -->
+    <hr>
+    <div>
+        <button id="idappend">Append</button>
+    </div>
+    <div>
+        <h1>Append</h1>
+        <p id="parrafo13">
+            .
+        </p>
+    </div>
+    <hr>
+    <div>
+        <button id="idhtml">Html</button>
+    </div>
+    <div>
+        <h1>Html</h1>
+        <p id="parrafo14">
+            .
+        </p>
+    </div>
+    <hr>
+    <div>
+        <button id="idattr">Attr</button>
+    </div>
+    <div>
+        <h1>Attr</h1>
+        <p id="parrafo15">
+            .
+        </p>
+    </div>
+    <hr>
+    <div>
+        <button id="idval">Val</button>
+    </div>
+    <div>
+        <h1>Val</h1>
+        <p id="parrafo16">
+            .
+        </p>
+    </div>
+    <hr>
+    <div>
+        <button id="idtext">Text</button>
+    </div>
+    <div>
+        <h1>Text</h1>
+        <p id="parrafo17">
+            .
+        </p>
+    </div>
+    <hr>
+</body>
+
+</html>
