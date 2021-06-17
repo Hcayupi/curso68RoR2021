@@ -1,0 +1,132 @@
+div {
+    display: inline-block;
+    vertical-align: top;
+    height: 135px;
+}
+
+button {
+    display: block;
+    top: -33px;
+    margin-right: 80px;
+    margin-bottom: 2px;
+    width: 150px;
+    height: 33px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.red {
+    color: red;
+}
+
+.textoBefore {
+    display: block;
+}
+
+.textoAfter {
+    display: block;
+}
+
+.textoAppend {
+    /* display: block; */
+    color: red;
+}
+
+.altoDiv {
+    height: 250px;
+}
+
+.instruccion {
+    display: block;
+    margin: 8px;
+}
+
+.formatoImagen {
+    width: 100px;
+    height: auto;
+}
+
+.alertaMsg {
+    background-color: #b1585a;
+    color: white;
+    text-align: center;
+    width: 450px;
+    margin: 1px;
+}
+
+.exitoMsg {
+    background-color: #2d8321;
+    color: white;
+    text-align: center;
+    width: 450px;
+    margin: 1px;
+}
+
+.formatoDivVal {
+    height: 250px;
+    width: 491px;
+}
+
+p {
+    display: inline-block;
+}
+
+li {
+    display: inline-block;
+}
+
+#idOsoDown {
+    display: none;
+}
+
+#idDinosaurio {
+    display: none;
+}
+
+#idRobot {
+    display: none;
+}
+
+#idAddBorder {
+    margin-left: 30px;
+}
+
+#idDivScroll {
+    display: block;
+    height: 163px;
+    width: 400px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+}
+
+#idParrafo13 {
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    height: 163px;
+    width: 750px;
+    overflow-y: scroll;
+}
+
+#idParrafo14 {
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    height: 163px;
+    width: 350px;
+}
+
+#idParrafo17 {
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+}
+
+#idLogin {
+    display: block;
+    height: auto;
+}
+
+#idVal {
+    margin-top: 26px;
+}

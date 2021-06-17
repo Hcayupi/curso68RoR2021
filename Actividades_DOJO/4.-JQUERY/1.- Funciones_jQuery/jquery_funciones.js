@@ -180,7 +180,7 @@ $('document').ready(function() {
             setMensajeError("Debe ingresar una contraseña");
             $('#idPass').val("");
 
-        } else if (usuario != "admin" && password != "1234") {
+        } else if (usuario != "admin" || password != "1234") {
             setMensajeError("Los datos son incorrectos");
             $('#idUsuario').val("");
             $('#idPass').val("");
@@ -219,6 +219,12 @@ $('document').ready(function() {
             $('.exitoMsg').remove();
         }
     }
+
+    $('#idRestablecerVal').click(function() {
+        ocultarMensaje();
+        $('#idPass').val("");
+        $('#idUsuario').val("");
+    });
 
     //FIN VAL
 
