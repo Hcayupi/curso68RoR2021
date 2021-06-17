@@ -1,107 +1,107 @@
 $('document').ready(function() {
     var numClick = 0;
     //CLICK
-    $('#parrafo1').click(function() {
+    $('#idParrafo1').click(function() {
         numClick += 1;
-        $('#parrafo1').text("Haz hecho  " + numClick + "  click sobre mi");
+        $('#idParrafo1').text("Haz hecho  " + numClick + "  click sobre mi");
     });
     $('#idClearClick').click(function() {
         numClick = 0;
-        $('#parrafo1').text("Haz click sobre mi");
+        $('#idParrafo1').text("Haz click sobre mi");
     });
     //FIN CLICK
 
     //HIDE
-    $('#idhide').click(function() {
-        $('#parrafo2').hide();
+    $('#idHide').click(function() {
+        $('#idParrafo2').hide(2000);
     });
-    $('#idreestablecerHide').click(function() {
+    $('#idClearHide').click(function() {
 
-        $('#parrafo2').show();
+        $('#idParrafo2').show();
     });
     //FIN HIDE
 
     //SHOW
-    $("#idshow").click(function() {
-        $("#parrafo3").text("Es un dinosaurio!!!");
-        $("#iddinosaurio").show();
+    $("#idShow").click(function() {
+        $("#idParrafo3").text("Es un dinosaurio!!!");
+        $("#idDinosaurio").show(2000);
     });
-    $("#idHide").click(function() {
-        $("#iddinosaurio").hide();
-        $("#parrafo3").text("Haz click sobre el botón Show para mostrar la imagen.");
+    $("#idClearShow").click(function() {
+        $("#idDinosaurio").hide();
+        $("#idParrafo3").text("Haz click sobre el botón Show para mostrar la imagen.");
     });
     //FIN SHOW
 
     //TOGGLE
-    $('#idtoggle').click(function() {
-        $('#idave').toggle();
+    $('#idToggle').click(function() {
+        $('#idAve').toggle();
     });
     //FIN TOGGLE
 
     //SLIDEDOWN
-    $('#idslidedown').click(function() {
-        $('#idosoDown').slideDown("slow");
+    $('#idSlidedown').click(function() {
+        $('#idOsoDown').slideDown("slow");
     });
-    $('#idreestablecerSlidedown').click(function() {
-        $('#idosoDown').hide();
+    $('#idClearSlidedown').click(function() {
+        $('#idOsoDown').hide();
     });
     //FIN SLIDEDOWN
 
     //SLIDEUP
-    $('#idslideup').click(function() {
-        $('#idosoUp').slideUp("slow");
+    $('#idSlideup').click(function() {
+        $('#idOsoUp').slideUp("slow");
 
     });
-    $('#idreestablecerSlideup').click(function() {
-        $('#idosoUp').show();
+    $('#idClearSlideup').click(function() {
+        $('#idOsoUp').show();
     });
     //FIN SLIDEUP
 
     //SLIDETOGGLE
-    $('#idslidetoggle').click(function() {
-        $('#parrafo7').slideToggle();
+    $('#idSlidetoggle').click(function() {
+        $('#idParrafo7').slideToggle();
 
     });
     //FIN SLIDETOGGLE
 
     //FADEIN
-    $('#idfadein').click(function() {
-        $('#idrobot').fadeIn();
+    $('#idFadein').click(function() {
+        $('#idRobot').fadeIn();
 
     });
 
-    $("#idreestablecerFadeIn").click(function() {
-        $('#idrobot').hide();
+    $("#idClearFadeIn").click(function() {
+        $('#idRobot').hide();
     });
     //FIN FADEIN
 
     //FADEOUT
-    $('#idfadeout').click(function() {
-        $('#idbb8').fadeOut();
+    $('#idFadeout').click(function() {
+        $('#idBb8').fadeOut();
 
     });
 
-    $("#idreestablecerfadeout").click(function() {
-        $('#idbb8').show();
+    $("#idClearFadeOut").click(function() {
+        $('#idBb8').show();
     });
     //FIN FADEOUT
 
     //ADD CLASS
-    $('#idaddClass').click(function() {
-        $('#parrafo10').addClass("red");
+    $('#idAddClass').click(function() {
+        $('#idParrafo10').addClass("red");
     });
-    $('#idremoveClass').click(function() {
-        $('#parrafo10').removeClass();
+    $('#idClearClass').click(function() {
+        $('#idParrafo10').removeClass();
     });
     //FIN ADD CLASS
 
     //BEFORE
     var numParrafoBefore = 2;
-    $('#idbefore').click(function() {
-        $('#parrafo11').before("<p class='textoBefore'>- Párrafo: " + numParrafoBefore + "</p>");
+    $('#idBefore').click(function() {
+        $('#idParrafo11').before("<p class=textoBefore>- Párrafo: " + numParrafoBefore + "</p>");
         numParrafoBefore += 1;
     });
-    $('#idreestablecerbefore').click(function() {
+    $('#idClearBefore').click(function() {
         $(".textoBefore").remove();
         numParrafoBefore = 2;
     });
@@ -109,13 +109,126 @@ $('document').ready(function() {
 
     //AFTER
     var numParrafoAfter = 2;
-    $('#idafter').click(function() {
-        $('#parrafo12').after("<p class='textoAfter'>- Párrafo: " + numParrafoAfter + "</p>");
+    $('#idAfter').click(function() {
+        $('#idParrafo12').after("<p class=textoAfter>- Párrafo: " + numParrafoAfter + "</p>");
         numParrafoAfter += 1;
     });
-    $('#idreestablecerafter').click(function() {
+    $('#idClearAfter').click(function() {
         $(".textoAfter").remove();
         numParrafoAfter = 2;
     });
     //FIN AFTER
+
+    //APPEND
+    var numParrafoAppend = 1;
+    $('#idAppend').click(function() {
+        $('#idParrafo13').append(" texto " + numParrafoAppend);
+        numParrafoAppend += 1;
+    });
+    $('#idClearAppend').click(function() {
+        $('#idParrafo13').empty();
+        $('#idParrafo13').append("Este texto está dentro de la etiqueta p (párrafo).");
+        numParrafoAppend = 1;
+    });
+    //FIN APPEND
+
+    //HTML:
+    $("#idHtml").click(function() {
+        $('#idParrafo14').html('<img src=./imagen/joda.png>');
+        $('img').attr('width', '400');
+        $('img').attr('alt', 'joda');
+    });
+    $('#idClearHtml').click(function() {
+        $('#idParrafo14').html("Este texto está dentro de la etiqueta p (párrafo).");
+    });
+    //FIN HTML
+    var tamagnoImg = 15;
+    //ATTR
+    $('#idSumarPx').click(function() {
+        $('#idImg').attr('width', tamagnoImg);
+        tamagnoImg += 5;
+    });
+
+    $('#idChangeImg').click(function() {
+        $('#idImg').attr('src', "./imagen/leon.png");
+        $('#idImg').attr('alt', "leon");
+    });
+    $('#idClearAttr').click(function() {
+        $('#idImg').attr('src', "./imagen/gato.png");
+        $('#idImg').attr('alt', "gato");
+        $('#idImg').attr('width', "10");
+        tamagnoImg = 15;
+    });
+    //FIN ATTR
+
+    //VAL
+    var intervalo;
+    $('#idVal').click(function() {
+        //.val() retorna un string, con el contenido del input
+        var usuario = $('#idUsuario').val();
+        var password = $('#idPass').val();
+        ocultarMensaje();
+
+        if (usuario.length == 0) {
+            setMensajeError("Debe ingresar el nombre de usuario");
+            $('#idUsuario').val("");
+        } else if (!isNaN(usuario)) {
+            setMensajeError("El usuario no pueder ser numérico");
+            $('#idUsuario').val("");
+        }
+        if (password.length == 0) {
+            setMensajeError("Debe ingresar una contraseña");
+            $('#idPass').val("");
+
+        } else if (usuario != "admin" && password != "1234") {
+            setMensajeError("Los datos son incorrectos");
+            $('#idUsuario').val("");
+            $('#idPass').val("");
+        } else {
+            setMensajeExito("Los datos son correctos");
+        }
+
+    });
+
+    $('#idUsuario').click(function() {
+        ocultarMensaje();
+        $(this).val("");
+    });
+
+    $('#idPass').click(function() {
+        ocultarMensaje();
+        $(this).val("");
+    });
+
+    function setMensajeError(msg) {
+        $('#idLogin').after('<p id=idAlerta>' + msg + '</p>');
+        $('#idAlerta').addClass('alertaMsg');
+    }
+
+    function setMensajeExito(msg) {
+        $('#idLogin').after('<p id=idExito>' + msg + '</p>');
+        $('#idExito').addClass('exitoMsg');
+    }
+
+    function ocultarMensaje() {
+        //Verifica si el elemento existe
+        if ($('.alertaMsg').length > 0) {
+            $('.alertaMsg').remove();
+        }
+        if ($('.exitoMsg').length > 0) {
+            $('.exitoMsg').remove();
+        }
+    }
+
+    //FIN VAL
+
+    // TEXT
+    $('#idText').click(function() {
+        $('#idParrafo17').text("La piña. xD");
+    });
+    $('#idClearText').click(function() {
+        $('#idParrafo17').text("Tiene escamas pero no es un pez, tiene corona pero no es un rey. ¿Qué es?");
+    });
+
+    //FIN TEXT
 });

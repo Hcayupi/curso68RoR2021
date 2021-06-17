@@ -40,25 +40,68 @@
             display: block;
         }
         
-        img {
+        .textoAppend {
+            /* display: block; */
+            color: red;
+        }
+        
+        .altoDiv {
+            height: 250px;
+        }
+        
+        .instruccion {
+            display: block;
+            margin: 8px;
+        }
+        
+        .formatoImagen {
             width: 100px;
             height: auto;
+        }
+        
+        .alertaMsg {
+            background-color: #b1585a;
+            color: white;
+            text-align: center;
+            width: 450px;
+            margin: 1px;
+        }
+        
+        .exitoMsg {
+            background-color: #2d8321;
+            color: white;
+            text-align: center;
+            width: 450px;
+            margin: 1px;
+        }
+        
+        .formatoDivVal {
+            height: 250px;
+            width: 491px;
         }
         
         p {
             display: inline-block;
         }
         
-        #idosoDown {
+        li {
+            display: inline-block;
+        }
+        
+        #idOsoDown {
             display: none;
         }
         
-        #iddinosaurio {
+        #idDinosaurio {
             display: none;
         }
         
-        #idrobot {
+        #idRobot {
             display: none;
+        }
+        
+        #idAddBorder {
+            margin-left: 30px;
         }
         
         #idDivScroll {
@@ -70,12 +113,33 @@
             background: #f1f1f1;
         }
         
-        #idDivBefore {
-            height: 250px;
+        #idParrafo13 {
+            border: 1px solid #ddd;
+            background: #f1f1f1;
+            height: 163px;
+            width: 750px;
+            overflow-y: scroll;
         }
         
-        #idDivAfter {
-            height: 250px;
+        #idParrafo14 {
+            border: 1px solid #ddd;
+            background: #f1f1f1;
+            height: 163px;
+            width: 350px;
+        }
+        
+        #idParrafo17 {
+            border: 1px solid #ddd;
+            background: #f1f1f1;
+        }
+        
+        #idLogin {
+            display: block;
+            height: auto;
+        }
+        
+        #idVal {
+            margin-top: 26px;
         }
     </style>
 </head>
@@ -88,7 +152,7 @@
     </div>
     <div>
         <h1>Click</h1>
-        <p id="parrafo1">
+        <p id="idParrafo1">
             Haz click sobre mi
         </p>
     </div>
@@ -96,12 +160,12 @@
     <hr>
     <!-- HIDE -->
     <div>
-        <button id="idhide">Hide</button>
-        <button id="idreestablecerHide">Reestablecer</button>
+        <button id="idHide">Hide</button>
+        <button id="idClearHide">Reestablecer</button>
     </div>
     <div>
         <h1>Hide</h1>
-        <p id="parrafo2">
+        <p id="idParrafo2">
             Click sobre el botón Hide para ocultar párrafo.
         </p>
     </div>
@@ -109,66 +173,66 @@
     <hr>
     <!-- SHOW -->
     <div>
-        <button id="idshow">Show</button>
-        <button id="idHide">Reestablecer</button>
+        <button id="idShow">Show</button>
+        <button id="idClearShow">Reestablecer</button>
     </div>
     <div>
         <h1>Show</h1>
-        <p id="parrafo3">
+        <p id="idParrafo3">
             Haz click sobre el botón Show para mostrar la imagen.
         </p>
     </div>
-    <img id="iddinosaurio" src="./imagen/dinosaurios.jpeg" alt="dinosaurio">
+    <img class="formatoImagen" id="idDinosaurio" src="./imagen/dinosaurios.jpeg" alt="dinosaurio">
     <!-- FIN SHOW -->
     <hr>
     <!-- TOGGLE -->
     <div>
-        <button id="idtoggle">Toggle</button>
+        <button id="idToggle">Toggle</button>
     </div>
     <div>
         <h1>Toggle</h1>
-        <p id="parrafo4">
+        <p id="idParrafo4">
             Haz click sobre el botón Toggle para mostrar y también para ocultar la imagen.
         </p>
     </div>
-    <img id="idave" src="./imagen/ave.png" alt="ave">
+    <img class="formatoImagen" id="idAve" src="./imagen/ave.png" alt="ave">
     <!-- FIN TOGGLE -->
     <hr>
     <!-- SLIDEDOWN -->
     <div>
-        <button id="idslidedown">SlideDown</button>
-        <button id="idreestablecerSlidedown">Reestablecer</button>
+        <button id="idSlidedown">SlideDown</button>
+        <button id="idClearSlidedown">Reestablecer</button>
     </div>
     <div>
         <h1>SlideDown</h1>
-        <p id="parrafo5">
+        <p id="idParrafo5">
             Haz click sobre el botón SlideDown para mostrar un oso.
         </p>
     </div>
-    <img id="idosoDown" src="./imagen/oso.png" alt="oso">
+    <img class="formatoImagen" id="idOsoDown" src="./imagen/oso.png" alt="oso">
     <!-- FIN SLIDEDOWN -->
     <hr>
     <!-- SLIDEUP -->
     <div>
-        <button id="idslideup">SlideUp</button>
-        <button id="idreestablecerSlideup">Reestablecer</button>
+        <button id="idSlideup">SlideUp</button>
+        <button id="idClearSlideup">Reestablecer</button>
     </div>
     <div>
         <h1>SlideUp</h1>
-        <p id="parrafo6">
+        <p id="idParrafo6">
             Haz click sobre el botón SlideUp para ocultar la imagen
         </p>
     </div>
-    <img id="idosoUp" src="./imagen/oso.png" alt="oso">
+    <img class="formatoImagen" id="idOsoUp" src="./imagen/oso.png" alt="oso">
     <!-- FIN SLIDEUP -->
     <hr>
     <!-- SLIDETOGGLE -->
     <div>
-        <button id="idslidetoggle">Slidetoggle</button>
+        <button id="idSlidetoggle">Slidetoggle</button>
     </div>
     <div>
         <h1>Slidetoggle</h1>
-        <p id="parrafo7">
+        <p id="idParrafo7">
             Haz click sobre el botón slidetoggle para ocultar y también mostrar el párrafo.
         </p>
     </div>
@@ -176,41 +240,41 @@
     <hr>
     <!-- FADEIN-->
     <div>
-        <button id="idfadein">FadeIn</button>
-        <button id="idreestablecerFadeIn">Reestablecer</button>
+        <button id="idFadein">FadeIn</button>
+        <button id="idClearFadeIn">Reestablecer</button>
     </div>
     <div>
         <h1>FadeIn</h1>
-        <p id="parrafo8">
+        <p id="idParrafo8">
             Haz click sobre el botón FadeIn para que aparezca la imagen
         </p>
     </div>
-    <img id="idrobot" src="./imagen/robot.png" alt="robot">
+    <img class="formatoImagen" id="idRobot" src="./imagen/robot.png" alt="robot">
     <!-- FIN FADE IN-->
     <hr>
     <!-- FADEOUT-->
     <div>
-        <button id="idfadeout">FadeOut</button>
-        <button id="idreestablecerfadeout">Reestablecer</button>
+        <button id="idFadeout">FadeOut</button>
+        <button id="idClearFadeOut">Reestablecer</button>
     </div>
     <div>
         <h1>FadeOut</h1>
-        <p id="parrafo9">
+        <p id="idParrafo9">
             Haz click sobre el botón FadeOut para que BB8 desaparezca
         </p>
     </div>
-    <img id="idbb8" src="./imagen/bb8.png" alt="BB8">
+    <img class="formatoImagen" id="idBb8" src="./imagen/bb8.png" alt="BB8">
     <!-- FADEOUT-->
     <hr>
     <!-- ADD CLASS-->
     <div>
-        <button id="idaddClass">Add class</button>
-        <button id="idremoveClass">Remove Class</button>
+        <button id="idAddClass">Add class</button>
+        <button id="idClearClass">Reestablecer</button>
 
     </div>
     <div>
         <h1>AddClass</h1>
-        <p id="parrafo10">
+        <p id="idParrafo10">
             Haz click sobre el botón AddClass para cambiar de color el párrafo.
         </p>
     </div>
@@ -218,85 +282,112 @@
     <hr>
     <!-- BEFORE -->
     <div>
-        <button id="idbefore">Before</button>
-        <button id="idreestablecerbefore">Reestablecer</button>
+        <button id="idBefore">Before</button>
+        <button id="idClearBefore">Reestablecer</button>
     </div>
-    <div id=idDivBefore>
+    <div class="altoDiv">
         <h1>Before</h1>
         <p>
             Haz click sobre el botón Before para agregar un nuevo párrafo arriba de - Párrafo: 1.
         </p>
         <div id="idDivScroll">
-            <p id="parrafo11">- Párrafo: 1</p>
+            <p id="idParrafo11">- Párrafo: 1</p>
         </div>
     </div>
     <!-- FIN  BEFORE -->
     <hr>
     <!-- AFTER -->
     <div>
-        <button id="idafter">After</button>
-        <button id="idreestablecerafter">Reestablecer</button>
+        <button id="idAfter">After</button>
+        <button id="idClearAfter">Reestablecer</button>
     </div>
-    <div id=idDivAfter>
+    <div class="altoDiv">
         <h1>After</h1>
         <p>
             Haz click sobre el botón Before para agregar un nuevo párrafo abajo de - Párrafo: 1.
         </p>
         <div id="idDivScroll">
-            <p id="parrafo12">- Párrafo: 1</p>
+            <p id="idParrafo12">- Párrafo: 1</p>
         </div>
     </div>
     <!-- FIN  AFTER -->
     <hr>
+    <!-- APPEND -->
     <div>
-        <button id="idappend">Append</button>
+        <button id="idAppend">Append</button>
+        <button id="idClearAppend">Reestablecer</button>
     </div>
-    <div>
+    <div class="altoDiv">
         <h1>Append</h1>
-        <p id="parrafo13">
-            .
+        <p class="instruccion">
+            Haz click sobre el botón Append para agregar "texto" dentro del párrafo.
+        </p>
+        <p id="idParrafo13">
+            Este texto está dentro de la etiqueta p (párrafo).
         </p>
     </div>
+    <!-- FIN APPEND -->
     <hr>
-    <div>
-        <button id="idhtml">Html</button>
+    <!-- HTML -->
+    <div class="altoDiv">
+        <button id="idHtml">Html</button>
+        <button id="idClearHtml">Reestablecer</button>
     </div>
     <div>
         <h1>Html</h1>
-        <p id="parrafo14">
-            .
+        <p class="instruccion">Haz click sobre el botón Html para reemplazar el contenido por una imagen.</p>
+        <p id="idParrafo14">
+            Este texto está dentro de la etiqueta p (párrafo).
         </p>
     </div>
+    <!-- FIN HTML -->
     <hr>
+    <!-- ATTR -->
     <div>
-        <button id="idattr">Attr</button>
+        <button id="idClearAttr">Reestablecer</button>
     </div>
-    <div>
+    <div class="altoDiv">
         <h1>Attr</h1>
-        <p id="parrafo15">
-            .
-        </p>
+        <p class="instruccion">Haz click sobre los botones para modificar el atributo de la imagen.</p>
+        <ul>
+            <li><button id="idSumarPx"> Aumentar tamaño</button></li>
+            <li><button id="idChangeImg">Cambiar imagen</button></li>
+        </ul>
+        <img id="idImg" width="10px" src="./imagen/gato.png" alt="gato">
     </div>
+    <!-- FIN ATTR -->
     <hr>
+
+    <!-- VAL -->
     <div>
-        <button id="idval">Val</button>
+        <button id="idRestablecerVal">Reestablecer</button>
     </div>
-    <div>
+    <div class="formatoDivVal">
         <h1>Val</h1>
-        <p id="parrafo16">
-            .
-        </p>
+        <p id="idInstruccion" class="instruccion">Ingresa usuario: admin y contraseña:1234 y presiona Val </p>
+        <div id="idLogin">
+            <label for="user">Usuario: </label>
+            <input type="text" id="idUsuario" name="user" value="">
+            <label for="user">Contraseña: </label>
+            <input type="text" id="idPass" name="pass" value="">
+            <button id="idVal">Val</button>
+        </div>
     </div>
+    <!-- FIN VAL -->
     <hr>
+    <!-- TEXT -->
     <div>
-        <button id="idtext">Text</button>
+        <button id="idText">Text</button>
+        <button id="idClearText">Reestablecer</button>
     </div>
     <div>
         <h1>Text</h1>
-        <p id="parrafo17">
-            .
+        <p class="instruccion">Haz click sobre Text para reemplazar el texto y ver la respuesta.</p>
+        <p id="idParrafo17">
+            Tiene escamas pero no es un pez, tiene corona pero no es un rey. ¿Qué es?
         </p>
     </div>
+    <!-- FIN TEXT -->
     <hr>
 </body>
 
