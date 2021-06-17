@@ -134,9 +134,9 @@ $('document').ready(function() {
 
     //HTML:
     $("#idHtml").click(function() {
-        $('#idParrafo14').html('<img src=./imagen/joda.png>');
-        $('img').attr('width', '400');
-        $('img').attr('alt', 'joda');
+        $('#idParrafo14').html('<img id="idImgHtml" src=./imagen/joda.png>');
+        $('#idImgHtml').attr('width', '160');
+        $('#idImgHtml').attr('alt', 'joda');
     });
     $('#idClearHtml').click(function() {
         $('#idParrafo14').html("Este texto está dentro de la etiqueta p (párrafo).");
