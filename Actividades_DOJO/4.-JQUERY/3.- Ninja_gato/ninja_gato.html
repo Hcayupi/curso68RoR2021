@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NINJA GATO</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        img {
+            display: block;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+    </div>
+
+    <script>
+        $('document').ready(function() {
+            generarContenido();
+
+            function generarContenido() {
+                for (let i = 0; i <= 4; i++) {
+                    $('#container').append('<img src=./img/ninja' + i + '.png  data-alt-src=./img/cat' + i + '.png >');
+                }
+                $('img').click(function() {
+                    var temporal = $(this).attr('src');
+                    $(this).attr('src', $(this).attr('data-alt-src'));
+                    $(this).attr('data-alt-src', temporal);
+                });
+            }
+            //agregar boton en container
+            $('#container').after('<br><button id=idReestablecer>Reestablecer</button>');
+
+            //restaurar imagenes 
+            $('button').click(function() {
+                $('#container').empty();
+                generarContenido();
+                //location.reload(); //Recargar la página
+            });
+        });
+    </script>
+</body>
+
+</html>
