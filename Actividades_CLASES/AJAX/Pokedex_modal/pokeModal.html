@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokedex::</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //carga dinamica de las imagenes
+            for (let i = 1; i <= 898; i++) {
+                $('#container').append('<img id="' + i + '" src="http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + i + '.png">');
+            }
+
+            //capturar el click en alguna imagen
+            $('img').click(function() {
+                var id = $(this).attr('id'); //obtenemos el valor del id de la imagen
+
+                $.get("https://pokeapi.co/api/v2/pokemon/" + id + "/", function(respuesta) {
+
+                    console.dir(respuesta);
+
+                    //desplegar en modal a traves de css
+                    $('#miModal').addClass('miModaltarget');
+
+                    //mostrar en modal 
+                    $('.modalcontenido').html('<h1>' + respuesta.name + '</h1>');
+                    $('.modalcontenido').append('<img class="fondoImg" src="' + respuesta.sprites.front_default + '" alt="">');
+                    $('.modalcontenido').append('<h2>Type: </h2>');
+                    $('.modalcontenido').append('<h3>' + respuesta.types[0].type.name + '</h3><br>');
+                    $('.modalcontenido').append('<h2>Height: </h2>');
+                    $('.modalcontenido').append('<h3>' + respuesta.height + '</h3><br>');
+                    $('.modalcontenido').append('<h2>Weigth: </h2>');
+                    $('.modalcontenido').append('<h3>' + respuesta.weight + '</h3>');
+
+                }, "json");
+
+            });
+
+            //capturamos el click em el elemento
+            $('#cerrar').click(function() {
+
+                $('#miModal').removeClass('miModaltarget');
+            });
+
+
+
+        });
+    </script>
+    <style>
+        h3,
+        h2 {
+            display: inline-block;
+            color: #3e4e7d;
+            font-family: monospace;
+        }
+        
+        h3 {
+            margin: 0px 0px 0px 33px;
+        }
+        
+        h2 {
+            margin-left: 71px;
+        }
+        
+        h1 {
+            margin-left: 5px;
+            text-align: center;
+        }
+        
+        h1:first-letter {
+            text-transform: uppercase;
+        }
+        
+        .fondoImg {
+            border-radius: 50%;
+            background-color: #cbdcef;
+            margin-left: 93px;
+            margin-bottom: 18px;
+            padding: 10px;
+        }
+        
+        .modal-contenido {
+            background-color: rgb(218, 255, 255);
+            width: 300px;
+            margin: 20% auto;
+            position: relative;
+            border-radius: 8%;
+            padding-bottom: 15px;
+        }
+        
+        .modal {
+            background-color: rgba(0, 0, 0, .8);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0s;
+        }
+        
+        #fondoBoton {
+            background-color: #d04d0e;
+            ;
+            height: 42px;
+        }
+        
+        #miModal:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        #cerrar {
+            margin: 9px 0px 0px 9px;
+        }
+        
+        .miModaltarget {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <div id="fondoBoton"><button id="cerrar">X</button></div>
+                <div class="modalcontenido">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

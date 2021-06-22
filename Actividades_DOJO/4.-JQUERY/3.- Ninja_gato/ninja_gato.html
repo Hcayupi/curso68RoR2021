@@ -28,12 +28,18 @@
                 for (let i = 0; i <= 4; i++) {
                     $('#container').append('<img src=./img/ninja' + i + '.png  data-alt-src=./img/cat' + i + '.png >');
                 }
-                $('img').click(function() {
-                    var temporal = $(this).attr('src');
-                    $(this).attr('src', $(this).attr('data-alt-src'));
-                    $(this).attr('data-alt-src', temporal);
-                });
+                //CallBack
+                /* $('img').click(function() {
+                     var temporal = $(this).attr('src');
+                     $(this).attr('src', $(this).attr('data-alt-src'));
+                     $(this).attr('data-alt-src', temporal);
+                 });*/
             }
+            $(document).on('click', 'img', function() {
+                var temporal = $(this).attr('src');
+                $(this).attr('src', $(this).attr('data-alt-src'));
+                $(this).attr('data-alt-src', temporal);
+            });
             //agregar boton en container
             $('#container').after('<br><button id=idReestablecer>Reestablecer</button>');
 
