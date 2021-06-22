@@ -10,34 +10,34 @@
     <script>
         $(document).ready(function() {
             var array = [];
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 1; i <= 151; i++) {
                 $.ajax({
                     url: "https://pokeapi.co/api/v2/pokemon/" + i + "/",
                     async: false,
                     success: function(respuesta) {
                         array.push(respuesta);
                         array.sort(ordenar);
-                        if (i == 10) {
+                        if (i == 151) {
                             var contador = 0;
-                            var creaFila = "";
 
                             for (let j = 0; j < array.length; j++) {
-                                if (contador == 0)
-                                    creaFila += '<tr>';
-
-                                creaFila += '<td><p>El id es: ' + array[j].id + '</p></td>';
-                                creaFila += '<td><p>El nombre es: ' + array[j].name + '</p></td>';
-                                creaFila += '<td><img src="' + array[j].sprites.front_default + '"></td>';
-
-                                if (contador == 1) {
-                                    creaFila += '</tr>';
-                                    contador = 0;
+                                $('#tablaPokemon').append('<tr>');
+                                $('#tablaPokemon').append('<td><p>El id es: ' + array[j].id + '</p></td>');
+                                $('#tablaPokemon').append('<td><img src="' + array[j].sprites.front_default + '"></td>');
+                                $('#tablaPokemon').append('<td><p>El nombre es: ' + array[j].name + '</p></td>');
+                                j += 1;
+                                if (j < array.length) {
+                                    $('#tablaPokemon').append('<td><p>El id es: ' + array[j].id + '</p></td>');
+                                    $('#tablaPokemon').append('<td><img src="' + array[j].sprites.front_default + '"></td>');
+                                    $('#tablaPokemon').append('<td><p>El nombre es: ' + array[j].name + '</p></td>');
                                 }
-
-                                contador += 1;
-                                $('#tablaPokemon').append(creaFila);
+                                j += 1;
+                                if (j < array.length) {
+                                    $('#tablaPokemon').append('<td><p>El id es: ' + array[j].id + '</p></td>');
+                                    $('#tablaPokemon').append('<td><img src="' + array[j].sprites.front_default + '"></td>');
+                                    $('#tablaPokemon').append('<td><p>El nombre es: ' + array[j].name + '</p></td>');
+                                }
                             }
-
                         }
                     }
                 });
