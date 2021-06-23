@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#txtCiudad').click(function() {
+                $(this).val('');
+            });
+
+            document.onkeydown = function(e) {
+                if (e.keyCode == 13) {
+                    alert("Buscando...");
+                }
+            }
+        });
+    </script>
+</head>
+<style>
+    * {
+        /*border: 1px solid red;*/
+        margin: 0 auto;
+        font-family: 'Prompt', sans-serif;
+    }
+    
+    body {
+        background-color: #ca0000d4;
+    }
+    
+    #txtCiudad {
+        height: 47px;
+        width: 248px;
+        margin-left: 22px;
+        border-radius: 6%;
+        border-color: #39a9f9;
+        font-size: 26px;
+        color: #969696;
+        border: 0px;
+        vertical-align: top;
+        outline: none;
+    }
+    
+    #inputDeBusqueda {
+        border-radius: 27px;
+        background-color: #ffffff;
+        width: 338px;
+        text-align: center;
+    }
+    
+    #submit {
+        background-color: unset;
+        color: white;
+        border: 0px;
+        position: relative;
+        top: 7px;
+        left: 1px;
+        padding: 0px;
+    }
+    
+    #tormenta {
+        border-radius: 18px;
+        margin-bottom: 15px;
+        height: 167px;
+        width: 341px;
+    }
+    
+    #submit:hover {
+        filter: brightness(120%);
+    }
+    
+    #container {
+        height: 276px;
+        width: 330px;
+        margin-top: 109px;
+    }
+    
+    #lupa {
+        height: 32px;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <img id="tormenta" src="clima.gif" alt="tormenta" srcset="">
+        <div id="inputDeBusqueda">
+            <input type="text" id="txtCiudad" value="City" />
+            <button id="submit"><img id="lupa" src="lupa.png" alt="Buscar"></button>
+            <div id="respuesta "></div>
+        </div>
+    </div>
+</body>
+
+
+</html>

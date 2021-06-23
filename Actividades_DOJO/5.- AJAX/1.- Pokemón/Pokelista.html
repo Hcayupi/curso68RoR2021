@@ -22,25 +22,25 @@
 
                             for (let j = 0; j < array.length; j++) {
                                 $('#tablaPokemon').append('<tr>');
-                                $('#tablaPokemon').append('<td><p>El id es: ' + array[j].id + '</p></td>');
-                                $('#tablaPokemon').append('<td><img src="' + array[j].sprites.front_default + '"></td>');
-                                $('#tablaPokemon').append('<td><p>El nombre es: ' + array[j].name + '</p></td>');
+                                pintarDatos(j);
                                 j += 1;
-                                if (j < array.length) {
-                                    $('#tablaPokemon').append('<td><p>El id es: ' + array[j].id + '</p></td>');
-                                    $('#tablaPokemon').append('<td><img src="' + array[j].sprites.front_default + '"></td>');
-                                    $('#tablaPokemon').append('<td><p>El nombre es: ' + array[j].name + '</p></td>');
-                                }
+                                if (j < array.length)
+                                    pintarDatos(j);
+
                                 j += 1;
-                                if (j < array.length) {
-                                    $('#tablaPokemon').append('<td><p>El id es: ' + array[j].id + '</p></td>');
-                                    $('#tablaPokemon').append('<td><img src="' + array[j].sprites.front_default + '"></td>');
-                                    $('#tablaPokemon').append('<td><p>El nombre es: ' + array[j].name + '</p></td>');
-                                }
+                                if (j < array.length)
+                                    pintarDatos(j);
+                                $('#tablaPokemon').append('</tr>');
                             }
                         }
                     }
                 });
+            }
+
+            function pintarDatos(posicion) {
+                $('#tablaPokemon').append('<td><p>El id es: ' + array[posicion].id + '</p></td>');
+                $('#tablaPokemon').append('<td><img src="' + array[posicion].sprites.front_default + '"></td>');
+                $('#tablaPokemon').append('<td><p>El nombre es: ' + array[posicion].name + '</p></td>');
             }
 
             function ordenar(a, b) {
