@@ -45,12 +45,14 @@
                     $('#respuesta').html("<h2>" + datosClimaticos.name + ", " + datosClimaticos.sys.country + "</h2>");
                     $('#respuesta').append("<p> Condición: " + datosClimaticos.weather[0].description + "</p>");
 
-                    temperatura = Math.round(datosClimaticos.main.temp_max - 273.15);
+                    temperatura = Math.round(datosClimaticos.main.temp - 273.15);
 
                     $('#respuesta').append("<p> Temperatura: " + temperatura + "ºC</p>");
                     $('#respuesta').append("<p> Coordenadas: " + datosClimaticos.coord.lat + "," + datosClimaticos.coord.lon + "</p>");
 
                     $('#txtCiudad').val("");
+
+                    // console.log(datosClimaticos);
 
                     initMap(datosClimaticos.coord.lat, datosClimaticos.coord.lon);
                 });
