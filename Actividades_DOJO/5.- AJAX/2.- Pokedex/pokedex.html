@@ -16,6 +16,7 @@
 
             $('img').on('click', function() {
                 var idImagen = $(this).attr('id');
+                console.log(8);
                 $.get("https://pokeapi.co/api/v2/pokemon/" + idImagen + "/", function(respuesta) {
 
                     console.dir(respuesta);
