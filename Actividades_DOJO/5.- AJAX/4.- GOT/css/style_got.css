@@ -1,0 +1,83 @@
+/* author:Hcayupi */
+
+.imgLoading {
+    position: fixed;
+    left: 44%;
+    top: 48%;
+    width: 109px;
+    height: 113px;
+    background-size: 110px;
+    background-repeat: no-repeat;
+    background-image: url("./imagenes/precarga.gif");
+}
+
+th,
+td {
+    width: 123px;
+    border-color: #e9d699;
+}
+
+td {
+    padding: 15px;
+}
+
+tr {
+    text-align: left;
+    background-color: #f7f7f7;
+    height: 66px;
+}
+
+
+/* Inicio - Redondear esquinas superiores de tabla*/
+
+tr th:first-child {
+    border-radius: 20px 0px 0px 0px;
+}
+
+tr th:last-child {
+    border-radius: 0px 20px 0px 0px;
+}
+
+
+/* Fin- Redondear esquinas superiores de tabla*/
+
+th {
+    background-color: #807898;
+    color: #ffffff;
+    height: 66px;
+    vertical-align: middle;
+    font-size: 30px;
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(#232323, #000000);
+    background-attachment: fixed;
+}
+
+#container {
+    width: 914px;
+    margin: 0px auto;
+}
+
+#detalleCasaGot {
+    width: 970px;
+    margin: 27px auto;
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    border-spacing: 1px;
+}
+
+img {
+    height: 158px;
+    width: 220px;
+    margin: 3px;
+    border: 1px solid white;
+}
+
+
+/*Ilumina la imagen cuando el mouse este sobre ella*/
+
+img:hover {
+    filter: brightness(160%)
+}

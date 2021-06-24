@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- author: Hcayupi -->
 
 <head>
     <meta charset="UTF-8">
@@ -11,145 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#precarga').addClass('.imgLoading');
-            console.log($('#precarga'));
-            $("#container").append("<img id=baratheon src=./imagenes/baratheon.png>");
-            $("#container").append("<img id=lannister src=./imagenes/lannister.jpg>");
-            $("#container").append("<img id=stark src=./imagenes/stark.jpg>");
-            $("#container").append("<img id=targaryen src=./imagenes/targaryen.jpg>");
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-            $('img').click(function() {
-                var pintado = "";
-                var nombreCasa = $(this).attr('id');
-
-                pintado += "<thead>";
-                pintado += "<tr>";
-                pintado += "<th>Name</th>";
-                pintado += "<th>Words</th>";
-                pintado += "<th>Titles</th>";
-                pintado += "</tr>";
-                pintado += "</thead>";
-
-                $("#detalleCasaGot").html(pintado);
-
-                for (let i = 1; i <= 378; i++) {
-
-                    $.ajax({
-                        url: "https://anapioficeandfire.com/api/houses/" + i,
-                        async: false,
-                        success: function(respuesta) {
-
-                            let cadenaTexto = respuesta.name.toLowerCase();
-                            let posicionDePalabra = cadenaTexto.indexOf(nombreCasa);
-                            let pintado = "";
-                            if (posicionDePalabra !== -1) {
-                                pintado += "<tr>";
-                                pintado += "<td>" + respuesta.name + "</td>";
-                                pintado += "<td>" + respuesta.words + "</td>";
-                                pintado += "<td>" + respuesta.titles + "</td>";
-                                pintado += "</tr>";
-                                $("#detalleCasaGot").append(pintado);
-                            } else
-                                console.log("No encontré lo que estás buscando");
-
-
-                        }
-                    });
-
-                    if (i == 378) {
-                        $('#precarga').removeClass('.imgLoading');
-                    }
-                }
-            });
-
-        });
-    </script>
-
-    <style>
-        .imgLoading {
-            position: fixed;
-            left: 44%;
-            top: 48%;
-            width: 109px;
-            height: 113px;
-            background-size: 110px;
-            background-repeat: no-repeat;
-            background-image: url(./imagenes/precarga.gif);
-        }
-        
-        th,
-        td {
-            width: 123px;
-            border-color: #e9d699;
-        }
-        
-        td {
-            padding: 15px;
-        }
-        
-        tr {
-            text-align: left;
-            background-color: #f7f7f7;
-            height: 66px;
-        }
-        /* Inicio - Redondear esquinas superiores de tabla*/
-        
-        tr th:first-child {
-            border-radius: 20px 0px 0px 0px;
-        }
-        
-        tr th:last-child {
-            border-radius: 0px 20px 0px 0px;
-        }
-        /* Fin- Redondear esquinas superiores de tabla*/
-        
-        th {
-            background-color: #807898;
-            color: #ffffff;
-            height: 66px;
-            vertical-align: middle;
-            font-size: 30px;
-            text-align: center;
-        }
-        
-        body {
-            background: linear-gradient(#232323, #000000);
-            background-attachment: fixed;
-        }
-        
-        #container {
-            width: 914px;
-            margin: 0px auto;
-        }
-        
-        #detalleCasaGot {
-            width: 970px;
-            margin: 27px auto;
-            text-align: center;
-            font-family: 'Prompt', sans-serif;
-            border-spacing: 1px;
-        }
-        
-        img {
-            height: 158px;
-            width: 220px;
-            margin: 3px;
-            border: 1px solid white;
-        }
-        
-        img:hover {
-            filter: brightness(150%);
-        }
-    </style>
+    <link href="./css/style_got.css" rel="stylesheet">
+    <script src="./js/script_got.js"></script>
 </head>
 
 <body>
     <div id="container">
-
     </div>
-    <div id="precarga" class=".imgLoading"></div>
+    <div id="precarga"></div>
     <table id="detalleCasaGot">
         <thead>
             <tr>
