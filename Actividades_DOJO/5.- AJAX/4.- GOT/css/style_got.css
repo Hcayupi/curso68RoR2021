@@ -13,12 +13,11 @@
 
 th,
 td {
-    width: 123px;
+    width: 322px!important;
     border-color: #e9d699;
-}
-
-td {
-    padding: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 77px;
 }
 
 tr {

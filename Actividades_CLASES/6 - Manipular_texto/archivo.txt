@@ -1,0 +1,830 @@
+WEBVTT
+
+00:00:01.240 --> 00:00:07.388
+Hola a todos. Ahora vamos a enfrentar probablemente la tarea más grande
+
+00:00:07.388 --> 00:00:11.976
+de esta semana. Blogs es la cuarta en la lista de tareas.
+
+00:00:11.976 --> 00:00:16.617
+Sin embargo se piden muchas vistas en esta tarea, y tendremos que usar mucha imaginación
+
+00:00:16.617 --> 00:00:20.846
+y restricciones en esta tarea. Entonces les voy a dar mi visión en esta.
+
+00:00:20.846 --> 00:00:23.977
+Para evitar que las cosas se salgan mucho de control.
+
+00:00:23.977 --> 00:00:30.761
+El panel de usuario, como veremos en un futuro video, en donde hay un gran wireframe
+
+00:00:30.761 --> 00:00:36.149
+que tendremos que mirar. Puede parecer que las cosas son muy ....
+
+00:00:37.999 --> 00:00:41.550
+Puede parecer que las cosas tienen que ser muy grandes para ese esquema
+
+00:00:41.550 --> 00:00:46.374
+pero, les prometo, una vez terminemos "blogs", esta será la cosa más grande que hayan
+
+00:00:46.374 --> 00:00:48.503
+construido en Coding Dojo.
+
+00:00:48.503 --> 00:00:51.713
+¡Vamos a comenzar! Leyendo las instrucciones,
+
+00:00:52.473 --> 00:00:58.614
+queremos construir una experiencia similar a blogspot.com. Esta permite a la gente construir blogs.
+
+00:00:59.474 --> 00:01:02.760
+Dice: "tu plataforma debe permitir a los usuarios registrarse",
+
+00:01:02.760 --> 00:01:04.999
+entonces necesitamos información del usuario.
+
+00:01:04.999 --> 00:01:07.591
+"Crear múltiples blogs", entonces necesitamos información de los blogs.
+
+00:01:07.591 --> 00:01:12.041
+"incluso permitir al usuario invitar a otros usuarios a ser co-administradores del blog".
+
+00:01:12.041 --> 00:01:16.751
+Entonces esto me dice que vamos a tener usuarios, vamos a tener blogs,
+
+00:01:16.751 --> 00:01:22.018
+pero me hace pensar que va a ser una especie de relación muchos a muchos.
+
+00:01:22.018 --> 00:01:28.663
+Entre usuarios y blogs porque en este caso, tratando de pensar en esto,
+
+00:01:28.663 --> 00:01:33.966
+usuarios y blogs, y algunos usuarios pueden tener blogs.
+
+00:01:33.966 --> 00:01:41.229
+Pero, primero que todo, pueden tener múltilpes blogs. Y segundo, un blog puede tener
+
+00:01:41.229 --> 00:01:44.964
+co-administradores. Entonces esto me hace pensar que es una relación muchos a muchos
+
+00:01:44.964 --> 00:01:46.314
+entre usuarios y blogs.
+
+00:01:46.314 --> 00:01:50.665
+Cuando la construyamos podremos ver de lo que hablo.
+
+00:01:51.294 --> 00:01:54.642
+Después dice que "los administradores de un blog pueden cambiar el nombre del blog,
+
+00:01:54.642 --> 00:01:58.032
+añadir posts, editar posts". Volvamos atrás.
+
+00:01:58.032 --> 00:02:00.904
+""los administradores de un blog pueden cambiar el nombre del blog".
+
+00:02:01.434 --> 00:02:06.611
+Entonces, en este caso. ¿Hay algo que tengamos que hacer que sea como, privilegios de admin,
+
+00:02:06.611 --> 00:02:14.620
+o algo así? No lo creo. Creo que podemos hacer todo esto tan sólo chequeando el ID de un usuario
+
+00:02:14.620 --> 00:02:20.473
+y diciendo "hey, esta persona que quiere cambiarle el nombre al blog, ¿es admin de éste?"
+
+00:02:20.473 --> 00:02:25.096
+Bueno en ese caso, ella puede o no hacer eso.
+
+00:02:26.416 --> 00:02:32.757
+Eso sería lo de esta relación. Los administradores pueden añadir post, editar posts,
+
+00:02:32.757 --> 00:02:38.026
+añadir y editar comentarios para esos posts, y subir archivos asociados a los posts.
+
+00:02:38.026 --> 00:02:45.393
+Ok, para uno no es claro, cuando tenemos un blog es como: aquí está este lugar, este blog,
+
+00:02:45.393 --> 00:02:52.372
+el blog de Todd, y yo Todd voy a escribir posts, quizá a diario, como:
+
+00:02:52.372 --> 00:02:56.522
+"Hey, aquí está mi post del 27 de febrero o lo que sea" y después
+
+00:02:56.522 --> 00:03:00.574
+"cambiamos al siguiente post" que quizá escribí dos días después o algo así.
+
+00:03:00.904 --> 00:03:03.871
+Entonces cada vez que tenga una nueva entrada en mi blog es un post.
+
+00:03:03.871 --> 00:03:05.925
+Eso es lo que estoy pensando.
+
+00:03:05.925 --> 00:03:11.740
+Entonces vamos a tener información de los posts, vamos a tener información de los comentarios.
+
+00:03:11.740 --> 00:03:18.521
+Porque pienso que los comentarios van a servir a como funcionan los posts de los blogs.
+
+00:03:18.521 --> 00:03:24.706
+Tal como... Si visitamos un blog de cocina y vemos que ellos escribieron sus posts con recetas
+
+00:03:24.706 --> 00:03:30.565
+y cosas así. Y vemos los comentarios abajo, estos estan vinculados a ese post en particular.
+
+00:03:30.565 --> 00:03:38.217
+Ese comentario de Suzie acerca de mi receta de Rolls o algo así.
+
+00:03:38.217 --> 00:03:43.739
+Ese comentario no va a aplicar a un post que escribí dos días atrás, que diga:
+
+00:03:44.309 --> 00:03:50.449
+"Hey, esta es mi receta para los Macarrones". Su comentario está ligado a la receta de los Rolls
+
+00:03:50.449 --> 00:03:53.283
+no tiene nada que ver con mis Macarrones.
+
+00:03:53.283 --> 00:04:01.422
+Entonces tenemos comentarios separados de los posts, tenemos posts separados de los blogs,
+
+00:04:01.422 --> 00:04:06.780
+tenemos usuarios separados de los blogs, tendremos elementos que están entre medio
+
+00:04:06.780 --> 00:04:13.236
+de las cosas. Y también tenemos la posibilidad de subir archivos asociados a los posts.
+
+00:04:13.236 --> 00:04:22.393
+Ok, pareciera clara la relación de los archivos deben estar amarrados a un post.
+
+00:04:23.847 --> 00:04:27.881
+Y también dice que tenemos que capturar información acerca de qué página están viendo,
+
+00:04:27.881 --> 00:04:32.052
+los usuarios logueados. Por ejemplo: página visitada, cuándo la visitaron,
+
+00:04:32.052 --> 00:04:35.396
+cuánto tiempo estuvieron en ella, la dirección IP, el nombre, etc.
+
+00:04:35.396 --> 00:04:39.244
+Voy a dejar el nombre aparte, quizá lo retome más tarde.
+
+00:04:39.244 --> 00:04:44.910
+Pero esa es otro tipo de interacción entre usuarios que están registrados en,
+
+00:04:44.910 --> 00:04:53.830
+digamos blogspot. Y ellos verán nuestros blogs. Hay otras relaciones entre usuarios y blogs ahí.
+
+00:04:53.830 --> 00:05:00.069
+Si tú eres un usuario registrado, y no tienes blogs tuyos, pero estas mirando blogs de otros usuarios,
+
+00:05:00.729 --> 00:05:09.720
+pareciera algo contradictorio que la gente tuviese que ir a Blogspot y registrarse sólo para poder ver
+
+00:05:09.720 --> 00:05:13.023
+los blogs de otra gente. Pero eso es lo que tendremos que usar.
+
+00:05:13.023 --> 00:05:22.002
+Eso es lo que nos indica esta explicación, que tenemos que todos los usuarios deben registrarse.
+
+00:05:22.002 --> 00:05:28.056
+Si quieres tener blogs o no depende de tí. Pero vas a tener algún tipo de relación con los blogs
+
+00:05:28.056 --> 00:05:32.222
+que estes viendo. Aunque seas dueño o no de esos blogs.
+
+00:05:32.222 --> 00:05:37.085
+Creo que ya tenemos todo lo que necesitamos. Ahora es tiempo de empezar a diseñar
+
+00:05:37.625 --> 00:05:39.342
+en Workbench.
+
+00:05:39.342 --> 00:05:42.353
+Voy a crear un nuevo modelo aquí.
+
+00:05:44.003 --> 00:05:46.601
+Tenía otro modelo abierto por eso apareció ese diálogo.
+
+00:05:46.601 --> 00:05:50.924
+Doble click en el nombre del esquema. No olviden hacer esto sino van a terminar con un montón
+
+00:05:50.924 --> 00:05:54.807
+de mydb's o van a sobreescribir esquemas mydb's más tarde.
+
+00:05:55.467 --> 00:06:00.386
+Así que vamos a llamarlo blogspot_erd.
+
+00:06:01.446 --> 00:06:04.958
+Doble click en "añadir diagrama". Así que vamos a partir por los usuarios.
+
+00:06:04.958 --> 00:06:10.288
+No tenemos muchos requerimientos de lo que debemos almacenar de los usuarios,
+
+00:06:10.288 --> 00:06:14.098
+pero vamos a usar nuestra imaginación.
+
+00:06:14.098 --> 00:06:17.051
+Obviamente vamos a tener un ID auto incremental.
+
+00:06:17.051 --> 00:06:23.085
+Y después tendremos un nombre. Vamos a superar éste.
+
+00:06:23.085 --> 00:06:26.606
+Digamos nombre, apellido. Porque pensamos que se van a registrar.
+
+00:06:26.606 --> 00:06:32.003
+Entonces tratamos de emular todos esos formularios que todos nosotros hemos llenado alguna vez.
+
+00:06:32.003 --> 00:06:35.755
+Probablemente un email, que también será varchar 255.
+
+00:06:35.755 --> 00:06:41.363
+Tendremos un password. Si se van a registrar necesitamos un password para que se puedan
+
+00:06:41.363 --> 00:06:44.595
+loguear después. Y creo que estamos bien hasta acá.
+
+00:06:44.595 --> 00:06:48.586
+Y pondremos unos creado_en y actualizado_en, datetime.
+
+00:06:49.896 --> 00:06:50.854
+Bien!
+
+00:06:50.854 --> 00:06:55.018
+Y creo que lo siguiente que nos gustaría lograr serían los blogs.
+
+00:06:55.018 --> 00:06:59.768
+Así que creamos otra tabla para blogs, y la ponemos aquí.
+
+00:07:00.228 --> 00:07:03.520
+Porque sé que hay cosas extra que tendremos que hacer.
+
+00:07:03.520 --> 00:07:09.025
+Un ID auto incremental, como es usual. Vamos a tener un nombre del blog, como:
+
+00:07:09.025 --> 00:07:12.083
+"El Blog de Cocina de Todd", o algo así.
+
+00:07:12.523 --> 00:07:15.414
+Y eso es todo lo que necesitamos almacenar de un blog.
+
+00:07:15.844 --> 00:07:22.470
+En términos de un blog, si miramos un blog podemos unirlo a usuarios más adelante.
+
+00:07:22.470 --> 00:07:25.422
+Cuando empecemos a hacer consultas a MySQL, podremos ver como estas tablas...
+
+00:07:25.422 --> 00:07:28.847
+podremos obtener información de cada una de esta tablas
+
+00:07:28.847 --> 00:07:33.517
+de forma conjunta. Para obtener la información que deseamos. Como:
+
+00:07:33.517 --> 00:07:38.421
+"Hey, cuáles blogs son de Todd", o algo como eso.
+
+00:07:38.421 --> 00:07:40.025
+Aprenderemos eso más adelante.
+
+00:07:40.875 --> 00:07:45.773
+Entonces creado_en es, uh!. No varchar, es datetime.
+
+00:07:45.773 --> 00:07:50.140
+actualizado_en, ... datetime. Ok
+
+00:07:51.190 --> 00:07:55.337
+Ahora pensemos en la relación entre usuarios y blogs.
+
+00:07:55.337 --> 00:08:01.025
+Entonces una de estas es que habría administradores de blog, o sus dueños.
+
+00:08:01.025 --> 00:08:07.282
+Y estos dueños podían invitar a otros usuarios a co administrar sus blogs.
+
+00:08:07.282 --> 00:08:12.661
+Significando que un usuario puede crear tantos blogs como desee.
+
+00:08:12.661 --> 00:08:19.101
+Pero un blog en particular puede ser administrado por muchos usuarios, o co administradores.
+
+00:08:19.101 --> 00:08:24.409
+Entonces esta es una relación muchos a muchos. La vamos a manejar dándole una tabla
+
+00:08:24.409 --> 00:08:26.651
+creada a los administradores.
+
+00:08:26.651 --> 00:08:29.875
+Similar a los videos anteriores cuando teníamos una relación muchos a muchos
+
+00:08:29.875 --> 00:08:32.491
+vamos a tener que realizar un poco de maquillaje acá.
+
+00:08:32.491 --> 00:08:40.121
+Así que eliminemos los plurales de los ID's, y des seleccionemos estas llaves primarias.
+
+00:08:41.091 --> 00:08:48.556
+Y también asegurémonos de que haya una llave primaria ID, int, auto incremental, y
+
+00:08:48.556 --> 00:08:53.865
+vamos a subir esto un par de lugares. Así se vea similar a las otras.
+
+00:08:53.865 --> 00:08:59.469
+Y para el nombre de la tabla, aquí es donde diría "'Cómo quiero nombrar, digamos,
+
+00:08:59.469 --> 00:09:02.310
+la propiedad compartida de los blogs?"
+
+00:09:02.310 --> 00:09:07.020
+En la tarea se menciona a los administradores. Así que le pondremos "admins".
+
+00:09:07.020 --> 00:09:15.465
+Y en la tabla de admins podemos ver que cuando resalto esta relación entre admins y blogs,
+
+00:09:16.075 --> 00:09:22.680
+veo que hay un blog_id en la tabla de admins. Que nos dirá qué blog estamos referenciando
+
+00:09:22.680 --> 00:09:28.522
+en términos de quién es admin, y quién es admin viene del otro lado de la tabla.
+
+00:09:28.522 --> 00:09:35.253
+Del otro lado de la relación que es el usuario_id. Y esto nos dirá quién es dueño de que blog,
+
+00:09:35.253 --> 00:09:37.491
+y cuántos blogs tiene.
+
+00:09:37.491 --> 00:09:46.960
+Ahora pondremos las marcas de tiempo creado_en y actualizado_en. Cool!
+
+00:09:47.870 --> 00:09:52.034
+Creo que ya tenemos la parte de los dueños de blogs, los administradores.
+
+00:09:52.034 --> 00:09:56.564
+Y habrán otras cosas que los administradores puedan hacer y los dueños normales no podrán.
+
+00:09:57.083 --> 00:10:03.896
+Así que diría, en este punto, vamos a profundizar en las cosas que podamos entender más fácilmente.
+
+00:10:03.896 --> 00:10:11.635
+Así que vamos por los posts, y expliquemos esto.
+
+00:10:11.635 --> 00:10:15.214
+Lo primero que haremos es colocar la tabla en el esquema.
+
+00:10:15.214 --> 00:10:21.259
+Colocamos la tabla en el esquema, y esta va a ser posts. Y va a tener un ID auto incremental.
+
+00:10:21.259 --> 00:10:25.236
+Y recuerden que los posts son las entradas individuales de cada blog.
+
+00:10:25.236 --> 00:10:30.762
+Y un post va a tener, digamos, un título. No sabemos lo que será,
+
+00:10:30.762 --> 00:10:32.868
+pero quizá es un título.
+
+00:10:35.448 --> 00:10:40.848
+Luego, el contenido. Por ejemplo, un post de cocina del blog de Todd, lo que sea.
+
+00:10:40.848 --> 00:10:45.044
+El título del post de hoy será: Los macarrones de Todd.
+
+00:10:46.484 --> 00:10:52.589
+Y luego proveo todo el contenido. La carne y las papas, si quisiéramos, del resto de la página.
+
+00:10:52.589 --> 00:10:57.620
+Como: Aquí está mi receta, aquí están las imágenes, aquí está como lo hice.
+
+00:10:58.240 --> 00:11:02.920
+Así que el contenido, sería más apropiado que fuese del tipo TEXT,
+
+00:11:02.920 --> 00:11:08.320
+porque con TEXT es como, ilimitado, para nuestros própositos.
+
+00:11:08.320 --> 00:11:14.420
+Esperamos que esto sea un gran trozo de texto. Así que lo considero apropiado.
+
+00:11:15.000 --> 00:11:21.762
+Y ahora pienso, es bastante bueno que un post pueda existir necesitando un título y contenido.
+
+00:11:21.762 --> 00:11:27.384
+Y también tendremos las marcas temporales creado_en y actualizado_en aquí.
+
+00:11:27.384 --> 00:11:29.882
+Nos serán útiles a futuro, confíen en mi.
+
+00:11:29.882 --> 00:11:34.213
+Entonces ahora mirando esto, voy a reacomodar esto acá, para hacer espacio
+
+00:11:34.213 --> 00:11:39.887
+para poder ver todo. Ahora vamos a pensar en como se unen los posts a las otras tablas.
+
+00:11:39.887 --> 00:11:43.963
+Leímos en el enunciado que los administradores pueden añadir posts.
+
+00:11:44.433 --> 00:11:50.362
+Entonces en este sentido los usuarios pueden añadir posts. Un usuario puede crear un post,
+
+00:11:50.362 --> 00:11:59.406
+porque es como, en la base de usuarios, en cierto sentido pueden ser visitantes o administradores.
+
+00:12:00.136 --> 00:12:06.355
+Pero realmente sólo pueden ver cosas. Los administradores por otro lado,
+
+00:12:06.355 --> 00:12:09.898
+los dueños de los blog, son los que realmente pueden crear estos posts.
+
+00:12:09.898 --> 00:12:15.768
+Entonces no esperaría, en el blog de cocina de Todd, que cualquiera que no fuese yo,
+
+00:12:15.768 --> 00:12:19.895
+o alguien a quién identifique como mi co administrador para mi blog,
+
+00:12:19.895 --> 00:12:23.836
+pueda crear un post. Yo quiero ser capaz de crear posts.
+
+00:12:24.536 --> 00:12:30.359
+El resto adelante, pueden crear tantos comentarios como quieran. para eso son usuarios.
+
+00:12:33.539 --> 00:12:38.091
+Aquí hay una idea. Los admin pueden escribir muchos posts.
+
+00:12:38.091 --> 00:12:43.140
+Yo soy Todd, el admin del blog de cocina de Todd, y puedo escribir tantos posts como desee.
+
+00:12:43.140 --> 00:12:47.168
+Entonces definitivamente ésta va a ser una relación uno a muchos entre posts y admins
+
+00:12:47.168 --> 00:12:54.256
+porque mi post, digamos mi receta de macarrones, no va a estar ligada a otros admins,
+
+00:12:54.256 --> 00:12:57.232
+sólo a mí. Entonces va a ser uno a muchos.
+
+00:12:57.232 --> 00:13:01.068
+Parte de la tabla de muchos, y clickeamos a la tabla de uno, OK
+
+00:13:01.068 --> 00:13:04.783
+Entonces acá tenemos los posts. Y noten que obtuvimos la llave foránea,
+
+00:13:04.783 --> 00:13:11.789
+admins_id, construida aquí. Vamos a corregirla para que sea admin_id.
+
+00:13:11.789 --> 00:13:15.694
+Pueden dejarla abajo si desean. Yo voy a dejarla abajo por ahora,
+
+00:13:15.694 --> 00:13:18.003
+pero pueden moverla más arriba si desean.
+
+00:13:18.003 --> 00:13:20.609
+Me gusta hacer las cosas en términos de su importancia.
+
+00:13:20.609 --> 00:13:24.734
+Y tener la llave primaria y después las llaves foráneas justo abajo.
+
+00:13:25.194 --> 00:13:28.593
+Por último, ¿cómo se relacionan los posts a los blogs?
+
+00:13:28.593 --> 00:13:31.418
+Ya eliminamos a los usuarios. Los usuarios no pueden escribir posts.
+
+00:13:31.418 --> 00:13:33.210
+Tienes que ser un admin para poder escribir posts.
+
+00:13:33.210 --> 00:13:38.779
+Entonces para los blogs, si escribo un post para el blog de cocina de Todd,
+
+00:13:38.779 --> 00:13:44.853
+ese post sólo puede pertenecer a ese blog, pero mi blog de cocina puede tener muchos posts.
+
+00:13:44.853 --> 00:13:50.932
+Entonces es una relación uno a muchos. Así que clickeo en los muchos y voy al uno.
+
+00:13:50.932 --> 00:13:56.695
+Cool! Entonces obtengo una llave foránea blogs_id, me aseguro de corregirla.
+
+00:13:57.935 --> 00:14:00.354
+Entonces creo que estamos listos con los posts.
+
+00:14:00.354 --> 00:14:05.194
+Y sus relaciones con otras tablas, por ahora.
+
+00:14:05.194 --> 00:14:10.150
+Ahora hablemos de los comentarios que van en los posts. ¿Quiénes dejan estos comentarios?
+
+00:14:10.150 --> 00:14:15.204
+¿Quiénes dejan comentarios en los posts? Normalmente los usuarios. ¿Cierto?
+
+00:14:15.204 --> 00:14:20.861
+Los admins también pueden hacerlo, pueden dejar comentarios en sus propios posts.
+
+00:14:20.861 --> 00:14:26.960
+Por ejemplo yo puedo dejar un comentario diciendo algo acerca de mi receta de macarrones.
+
+00:14:27.730 --> 00:14:31.528
+Por ahora vamos a construir esta tabla de comentarios.
+
+00:14:33.898 --> 00:14:41.908
+Comentarios aquí, un ID auto incremental. Quizá vamos a necesitar,.... pongamos un título.
+
+00:14:42.768 --> 00:14:50.605
+Supongo,... vamos a hacerlo VARCHAR 255. Y después vamos a tener el contenido
+
+00:14:50.605 --> 00:14:54.592
+del comentario. Tipo TEXT.
+
+00:14:55.592 --> 00:15:01.961
+Y después las marcas temporales. Porque en verdad un comentario está hecho sólo
+
+00:15:01.961 --> 00:15:04.730
+de su título y el contenido.
+
+00:15:05.800 --> 00:15:12.266
+creado_en, actualizado_en. Y ahora diriamos...
+
+00:15:13.115 --> 00:15:18.864
+Vamos a explicar la relación entre los comentarios y los posts,
+
+00:15:18.864 --> 00:15:22.015
+y quienes pueden escribir esos comentarios. Entonces cualquier post,
+
+00:15:22.015 --> 00:15:27.457
+como mi receta de macarrones, ¿cuántos comentarios puede tener?
+
+00:15:28.417 --> 00:15:34.714
+Tantos como la gente quiera dejar. Esencialmente.
+
+00:15:34.714 --> 00:15:42.098
+Entonces es uno a muchos. ¿Puede un comentario estar ligado a varios posts?
+
+00:15:42.098 --> 00:15:48.788
+Como dije antes, ¿puede un comentario de Suzie estar ligado a mi receta de macarrones
+
+00:15:48.788 --> 00:15:52.748
+y a mi receta de Rolls? No. Estos dos posts que escribí. No
+
+00:15:52.748 --> 00:15:57.783
+Entonces es una uno a muchos. Un post puede tener muchos comentarios.
+
+00:15:57.783 --> 00:16:01.489
+Entonces vamos a corregir este posts_id.
+
+00:16:02.579 --> 00:16:06.261
+Cambiamos a post_id, Cool!
+
+00:16:06.261 --> 00:16:09.725
+Ahora pensemos en los usuarios. ¿Cuántos comentarios pueden escribir los usuarios? 
+
+
+00:16:09.725 --> 00:16:13.637
+¿Cuántos comentarios puede escribir Suzie? Tantos como ella quiera,
+
+00:16:13.637 --> 00:16:18.752
+a través de los blogs de cualquiera, o de los posts de cualquiera.
+
+00:16:18.752 --> 00:16:22.012
+Entonces vamos a tener muchos comentarios para un usuario.
+
+00:16:22.972 --> 00:16:29.074
+Y después vamos a corregir rápidamente esto. Es un ERD bastante grande
+
+00:16:29.074 --> 00:16:33.526
+así que tenemos que dejar espacio suficiente para que haga sentido.
+
+00:16:34.166 --> 00:16:40.136
+Ahora, en el enunciado decía que podemos tener admins que puedan editar cosas.
+
+00:16:40.136 --> 00:16:44.963
+Vamos a decir aquí que, como los admins están ligados a los usuarios,
+
+00:16:44.963 --> 00:16:53.041
+podemos encontrar que, digamos que si yo soy el usuario 1, y soy admin del blog 1,
+
+00:16:53.041 --> 00:17:00.728
+y mi ID de usuario 1 está ligado al ID de blog 1. Si voy a editar algo en un post,
+
+00:17:00.728 --> 00:17:07.963
+vamos a encontrar de alguna forma que: Hey, el ID del blog es 1, el ID del admin es 1,
+
+00:17:07.963 --> 00:17:16.653
+y yo como usuario soy 1. Vamos a encontrar de que, disculpen el ID del admin, nos querrá decir:
+
+00:17:16.653 --> 00:17:23.289
+¿Es el usuario 1 el dueño de este blog que está ligado a este comentario que deseamos editar?
+
+00:17:23.289 --> 00:17:27.841
+Y creo que esto sería posible. Así que no me gustaría añadir una relación extra
+
+00:17:27.841 --> 00:17:29.759
+entre admins y comentarios.
+
+00:17:29.759 --> 00:17:34.227
+Podríamos, pero sería más mantención para nosotros más adelante.
+
+00:17:34.227 --> 00:17:39.796
+Por ahora todo es sobre las relaciones y mantener las cosas sencillas.
+
+00:17:39.796 --> 00:17:43.846
+Entonces diríamos, los usuarios dejando comentarios está bien.
+
+00:17:43.846 --> 00:17:49.543
+Los admins son los que escriben posts, los admins son los que tienen blogs,
+
+00:17:49.543 --> 00:17:56.888
+y los blogs tienen posts. Entonces, ¿qué más tenemos aquí?
+
+00:17:56.888 --> 00:18:02.159
+Hay un detalle acerca de las páginas vistas, que dice así:
+
+00:18:02.159 --> 00:18:05.316
+"Los administradores de un blog pueden ...", blah blah blah
+
+00:18:05.316 --> 00:18:11.456
+"y también subir archivos asociados a los posts del blog". Ok vamos por los archivos!
+
+00:18:11.456 --> 00:18:18.190
+Esta va a ser otra tabla. Esto es lo que estoy pensando: Supongamos que quiero subir un PDF
+
+00:18:18.190 --> 00:18:24.127
+para mi receta, o imágenes para mi receta. Quiero tener esto en una tabla separada de archivos.
+
+00:18:25.437 --> 00:18:31.151
+Y, vamos a tener un ID auto incremental aquí. Y tendremos, digamos, el contenido.
+
+00:18:31.151 --> 00:18:36.888
+Quién sabe que puede ser esto. Puede ser un PDF, puede ser una imágen o lo que sea.
+
+00:18:36.888 --> 00:18:43.389
+Así que voy a usar BLOB aquí. Tendrán que investigar qué es el tipo de dato BLOB.
+
+00:18:43.389 --> 00:18:51.706
+Pero les adelanto que no es tan fácil poder almacenar archivos. Cómo imágenes y cosas así.
+
+00:18:51.706 --> 00:18:55.082
+Así que aceptemos ésto por esta vez, el contenido tipo BLOB.
+
+00:18:55.082 --> 00:18:58.356
+Y vamos a poner las marcas temporales.
+
+00:18:59.926 --> 00:19:04.251
+Estamos asumiendo que el campo "contenido" va a ser mágicamente capaz de almacenar
+
+00:19:04.251 --> 00:19:08.911
+un archivo de imagen o algo como eso. O algún lugar donde buscarlo.
+
+00:19:08.911 --> 00:19:13.139
+De hecho esto sería más apropiado. Si lo hiciéramos un VARCHAR.
+
+00:19:13.139 --> 00:19:17.741
+Y esto es lo que estoy pensando: podríamos llamar a esto "ruta" (del archivo).
+
+00:19:19.511 --> 00:19:29.807
+Lo que puede discrepar de la solución, pero va por el mismo camino.
+
+00:19:29.807 --> 00:19:34.183
+Entonces tenemos que saber que vamos a tener archivos sueltos.
+
+00:19:34.183 --> 00:19:37.283
+Ahora, en el enunciado dice que esto esta ligado a cada post, ¿Ok?
+
+00:19:37.283 --> 00:19:44.386
+[murmuros]
+
+00:19:44.386 --> 00:19:51.476
+Así que en este caso los archivos pueden subirse para un post, pero no pueden ser de varios posts.
+
+00:19:51.476 --> 00:19:54.997
+Así que la relación entre posts y archivos es uno a muchos.
+
+00:19:54.997 --> 00:20:00.569
+Ya que un post puede tener muchos archivos asociados. Así que tengo los archivos aquí,
+
+00:20:00.569 --> 00:20:09.050
+Y la otra cosa es que sólo los admins pueden hacer esto. Así que es otra relación uno a muchos.
+
+00:20:09.050 --> 00:20:14.149
+Un admin puede subir muchos archivos, pero un archivo puede ser subido por un sólo admin.
+
+00:20:14.149 --> 00:20:19.247
+Así que es otra uno a muchos, entre admins y archivos.
+
+00:20:19.247 --> 00:20:25.156
+Así que hacemos un poco de trabajo aquí para renombrar estos a singular.
+
+00:20:27.226 --> 00:20:31.145
+Cool! Y después, creo que estamos bien con los archivos.
+
+00:20:31.145 --> 00:20:34.697
+Todo puede ser conectado a los blogs. Si se preocupan por los blogs
+
+00:20:34.697 --> 00:20:39.094
+y cómo está todo conectado, bueno, siempre hay un camino de vuelta a los blogs a traves de
+
+00:20:39.094 --> 00:20:42.124
+llaves foráneas como blog_id acá en posts.
+
+00:20:44.244 --> 00:20:49.595
+Veamos lo de las páginas visitadas. "También queremos capturar la información de que páginas
+
+00:20:49.595 --> 00:20:53.184
+están viendo los usuarios registrados. Páginas visitadas, cuándo las visitaron,
+
+00:20:53.184 --> 00:20:56.164
+cuánto tiempo se quedaron, la dirección IP y el nombre"
+
+00:20:56.164 --> 00:21:02.903
+Por rapidez aquí voy a crear la tabla y tratar de explicarla.
+
+00:21:05.637 --> 00:21:13.466
+Es un buen momento para hablar de: Hey, pueden haber múltiples relaciones entre dos tablas.
+
+00:21:13.466 --> 00:21:16.358
+Ya hay una relación de admins entre los usuarios y los blogs.
+
+00:21:16.358 --> 00:21:21.096
+Pero los usuarios también se relacionan con los blogs porque pueden verlos. ¿cierto?
+
+00:21:21.096 --> 00:21:25.850
+Los usuarios registrados que no necesariamente son dueños de un blog igual pueden tener relación
+
+00:21:25.850 --> 00:21:29.400
+con un blog visitándolo. Así que aquí es donde diríamos, bueno tenemos una
+
+00:21:29.400 --> 00:21:34.598
+relación muchos a muchos. Cada usuario registrado puede visitar muchos blogs,
+
+00:21:34.598 --> 00:21:37.499
+y cada blog puede ser visitado por muchos usuarios.
+
+00:21:37.499 --> 00:21:44.433
+Así que hago otra muchos a muchos aquí. Y hago algunos arreglos aquí. Y lo llamo "visitas".
+
+00:21:44.433 --> 00:21:47.877
+Así que hace seguimiento de las interacciones de los usuarios con los blogs.
+
+00:21:47.877 --> 00:21:51.766
+Y queremos formatearla para que sea todo sobre las visitas.
+
+00:21:51.766 --> 00:21:56.225
+Así que subimos esto aquí. Estas ya no van a ser llaves primarias.
+
+00:21:56.225 --> 00:22:00.163
+Las vamos a renombrar, sacarnos el plural.
+
+00:22:01.843 --> 00:22:09.649
+También asegurarnos que tengamos un ID, Es un INT, es llave primaria, auto incremental.
+
+00:22:09.649 --> 00:22:15.326
+Ahora voy a poner nuestras marcas temporales. Y pensemos en qué más.
+
+00:22:15.326 --> 00:22:21.032
+O sea, había otras cosas más como seguir la dirección IP, seguir cuánto tiempo
+
+00:22:21.032 --> 00:22:27.583
+han estado viendo la página. Así que diría, ok, podemos registrar tu dirección IP.
+
+00:22:27.583 --> 00:22:34.721
+Sería de largo 16, por ahora. Hasta que tengamos IP versión 6 ahí.
+
+00:22:34.721 --> 00:22:41.133
+Y quizá la propiedad tiempo_visita. Esto es también, quizá, tipo DECIMAL, en vez de DATETIME.
+
+00:22:41.133 --> 00:22:44.651
+Y después tendremos nuestros creado_en y actualizado_en.
+
+00:22:45.439 --> 00:22:52.728
+Esto es algo complejo, esta tabla es compleja. Quizá quieran explorarla y divertirse con ella.
+
+00:22:52.728 --> 00:22:57.901
+Voy a subir esto rápidamente. pero esto se ve bastante bien para mí.
+
+00:22:57.901 --> 00:23:02.971
+Sólo tengo que reordenar estas cosas, porque todo está desordenando.
+
+00:23:02.971 --> 00:23:07.457
+Pero echen un vistazo a la solución, van a ver una diferencia entre la ruta (del archivo)
+
+00:23:07.457 --> 00:23:11.262
+y el contenido aquí. Pero la tabla visitas es muy clara porque podemos decir:
+
+00:23:11.262 --> 00:23:15.721
+Hey, está esta otra relación entre usuarios y blogs. En donde queremos seguir, qué usuarios,
+
+00:23:15.721 --> 00:23:22.257
+a través de este ID, está mirando qué blog. Podemos seguir su dirección IP de alguna forma,
+
+00:23:22.257 --> 00:23:26.420
+Y después cuánto tiempo han estado en la página. Viéndo ese blog.
+
+00:23:26.420 --> 00:23:32.188
+Quizá hacer un cálculo rápido entre que el usuario llego a la página y que cerró la pestaña.
+
+00:23:32.188 --> 00:23:37.033
+Podamos calcular la diferencia entre ambos tiempos y decir que es un DECIMAL.
+
+00:23:37.033 --> 00:23:44.059
+De cuántos minutos estuvo ahí. Y creo que esto es satisfactorio para esta tarea.
+
+00:23:44.589 --> 00:23:47.838
+Así que muchas gracias chicos por esta tarea tan larga.
+
+00:23:47.838 --> 00:23:53.646
+Y espero que esto sea útil para calmar los nervios en proyectos grandes.
+
+00:23:53.646 --> 00:23:57.765
+Así que nos vemos en otro video!
