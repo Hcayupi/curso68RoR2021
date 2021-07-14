@@ -1,0 +1,66 @@
+/* {
+    border: 1px solid red;
+}*/
+
+#wrapper {
+    width: 970px;
+    margin: 0px auto;
+}
+
+nav a {
+    border-right: 2px solid #ffffff;
+    list-style: none outside none;
+    padding-right: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+nav a+a {
+    margin-left: 16px;
+}
+
+nav {
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+    width: 395px;
+    margin-left: 212px;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+header {
+    background-color: black;
+}
+
+#logo {
+    height: 56px;
+    margin: 13px 0px 0px 13px;
+}
+
+h3 {
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+}
+
+h4 {
+    margin-top: 35px;
+    font-size: 34px;
+}
+
+#articlesuperior {
+    display: inline-block;
+    width: 53%;
+    vertical-align: top;
+    margin-left: 4px;
+}
+
+#imagenNigno {
+    width: 434px;
+    margin: 3px 0px 0px 3px;
+}

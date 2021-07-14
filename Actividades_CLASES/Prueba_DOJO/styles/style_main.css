@@ -1,0 +1,295 @@
+/*@ Hipólito Cayupi */
+
+
+/*Contenedor principal*/
+
+#wrapper {
+    width: 970px;
+    margin: 0px auto;
+    background-image: linear-gradient(#4f85e9, #243a6b);
+}
+
+
+/* Encabezado */
+
+header {
+    background-image: linear-gradient(#efeeea, #e0ddd8);
+}
+
+#btcorporate {
+    margin: 35px 0px 22px 450px;
+    background-image: linear-gradient(#4370b3, #2c4b8d, #464fa3);
+    border-radius: 6px 0px 0px 6px;
+    color: white;
+    font-size: 11px;
+    width: 81px;
+    height: 18px;
+    text-align: left;
+}
+
+#imgLogo {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+#imgLogo,
+#btcorporate,
+#inputsearch,
+#btBusqueda {
+    vertical-align: top;
+}
+
+#inputsearch {
+    margin: 32px 0px 22px 8px;
+    border-radius: 5px;
+    border: 0px;
+    height: 24px;
+    box-shadow: inset 0px 0px 5px 0px #a9a6a6;
+}
+
+#btBusqueda {
+    background-image: url(../images/dominion/search_icon.png);
+    background-repeat: no-repeat;
+    height: 27px;
+    width: 28px;
+    margin-top: 26px;
+    margin-left: 8px;
+    border: none;
+}
+
+nav a {
+    border-right: 1px solid #555555;
+    box-shadow: 1px 0px #ffffff;
+    list-style: none outside none;
+    padding-right: 20px;
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+nav a:last-child {
+    border-right: none;
+    box-shadow: none;
+}
+
+nav a+a {
+    margin-left: 16px;
+}
+
+nav {
+    display: inline-block;
+    vertical-align: top;
+    width: 703px;
+    margin-left: 386px;
+    margin-bottom: 7px;
+    padding: 0px;
+}
+
+
+/* Fin encabezado */
+
+
+/*Cuadro Login*/
+
+#divgrupologin {
+    margin: 15px 0px 0px 20px;
+    display: inline-block;
+    vertical-align: top;
+    width: 230px;
+}
+
+#divLogin {
+    width: 230px;
+    height: 237px;
+    display: inline-table;
+    vertical-align: top;
+    background-color: #e4eaec;
+    border: 1px solid white;
+}
+
+#divLogin input {
+    border-radius: 5px;
+    border: 0px;
+    height: 24px;
+    box-shadow: inset 0px 0px 5px 0px #a9a6a6;
+    margin: 6px 10px 6px 20px;
+}
+
+#divLogin a {
+    color: #2c4b8d;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0px 50px 7px 20px;
+    display: inline-block;
+    border: white;
+}
+
+#divLogin label {
+    margin: 6px 0px 5px 20px;
+    font-size: 14px;
+}
+
+#divLogin h4 {
+    padding: 0px 0px 0px 20px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    width: 211px;
+    background-image: linear-gradient(#2a3e99, #4d77d1);
+    color: white;
+}
+
+#divLogin h4 span {
+    font-size: 12px;
+}
+
+#btsignin {
+    margin-left: 20px;
+    color: white;
+    background-image: linear-gradient(#7b7b7e, #1f1f1f, #7b7b7e);
+    border-radius: 5px;
+}
+
+#btiamcostumer {
+    background-image: linear-gradient(#2a3e99, #4d77d1);
+    border: 1px solid white;
+    color: white;
+    width: 230px;
+    height: 30px;
+    margin-top: 15px;
+}
+
+
+/* Fin cuadro Login*/
+
+
+/* Imagenes - slides */
+
+#imgcostadoLogin {
+    margin: 0px 0px 0px 20px
+}
+
+#imgcostadoNext {
+    height: 302px;
+    width: 200px;
+    margin-left: -4px;
+}
+
+
+/* Fin imagenes - slides */
+
+
+/*Cuadro central News Update*/
+
+section {
+    background-color: #e4eaec;
+    height: 30px;
+}
+
+section h3 {
+    margin: 7px 13px 5px 20px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+section a {
+    color: #2fa2ff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+/*Fin cuadro central News Update*/
+
+
+/*Cuadros de informaciones Dominion Green Promise*/
+
+.seccionesinf {
+    width: 293px;
+    height: 98px;
+    display: inline-block;
+    background-color: white;
+    border: 3px solid grey;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+
+.seccioninicio {
+    margin-left: 30px;
+}
+
+.seccionf1nal {
+    margin-right: 30px;
+}
+
+.seccionesinf img {
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.seccionesinf a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #2fa2ff;
+}
+
+.seccionesinf h4 {
+    margin: 0px!important;
+}
+
+.textocostadoImg {
+    width: 172px;
+    margin: 10px;
+    display: inline-block;
+}
+
+
+/* Fin cuadros de informaciones Dominion Green Promise*/
+
+
+/* Pie de página*/
+
+footer {
+    background-image: linear-gradient(#efeeea, #e0ddd8);
+    height: 25px;
+}
+
+footer li {
+    display: inline-block;
+    margin: 8px 0px 0px -27px;
+}
+
+footer li {
+    border-right: 1px solid #555555;
+    box-shadow: 1px 0px #ffffff;
+    list-style: none outside none;
+    padding-right: 20px;
+    font-size: 12px;
+}
+
+footer li:last-child {
+    border-right: none;
+    box-shadow: none;
+}
+
+footer li+li {
+    margin-left: 16px;
+}
+
+footer span {
+    color: #24a049;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+}
+
+footer li:nth-child(6) {
+    margin-right: 143px;
+}
+
+
+/* Fin pie de página*/
