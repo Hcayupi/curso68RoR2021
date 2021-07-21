@@ -1,27 +1,23 @@
 class MathDojo
-    @@operacion = Array.new
+    @@operacion = 0
   
     def add *params
-
-        params[0].each do |elementos|
-        puts elementos
-
-
-        @@operacion.push(params.sum)
-        puts @@operacion
+        @@operacion += params.flatten.sum
         self
     end
-
+  
     def subtract *params
-        @@operacion.push(-params.sum)
-        puts @@operacion
+        num = params.flatten.sum
+        @@operacion-=num
         self
     end
-
-    def result
-        puts "resultado #{@@operacion.sum}"
+  
+   def result
+        puts @@operacion.round(2)
+        @@operacion = 0
         self
     end
+    
 end
 
 desafio1 = MathDojo.new.add(2).add(2, 5).subtract(3, 2).result # => 4
