@@ -1,0 +1,82 @@
+1.- \Desktop> mkdir test
+2.- \Desktop> cd .\test\
+3.- \Desktop\test> ni index.html
+
+
+    Directorio: C:\Users\Faraday\Desktop\test
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        22-07-2021     15:26              0 index.html
+
+4.- \Desktop\test> ni styles.css
+
+
+    Directorio: C:\Users\Faraday\Desktop\test
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        22-07-2021     15:26              0 styles.css
+
+
+5.- \Desktop\test> ni commands.txt 
+
+    Directorio: C:\Users\Faraday\Desktop\test
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        22-07-2021     15:26              0 commands.txt
+
+
+6.- \Desktop\test> copy index.html index_2.html
+7.- \Desktop\test> cd ..
+8.- \Desktop> mkdir destino
+
+    Directorio: C:\Users\Faraday\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        22-07-2021     15:27                destino
+
+9.- \Desktop> mv .\test\index_2.html .\destino\
+
+10.- \Desktop> cd .\test\
+
+Desktop\test> rm .\styles.css
+
+11.- \Desktop\test> dir
+
+
+    Directorio: C:\Users\Faraday\Desktop\test
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        22-07-2021     15:26              0 commands.txt
+-a----        22-07-2021     15:26              0 index.html
+-a----        22-07-2021     15:26              0 styles.css
+
+12.- \Desktop\test> cd ..
+
+13.- \Desktop> cd .\destino\
+
+14.- \Desktop\destino> dir
+
+
+    Directorio: C:\Users\Faraday\Desktop\destino
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        22-07-2021     15:26              0 index_2.html
+
+
+15.- \Desktop\destino>
+16.- \Desktop> rm test/styles.css
+
+17.- \Desktop> rm -R .\destino\
+
+18.- \Desktop\test> type .\commands.txt
